@@ -28,3 +28,5 @@ config add foo
 config commit -m 'add foo'
 config push -u origin main
 ```
+
+special mention to: https://news.ycombinator.com/item?id=11071754
