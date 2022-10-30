@@ -1,0 +1,43 @@
+#!/bin/sh
+# Environment variables set everywhere
+export EDITOR="nvim"
+export TERMINAL="st"
+export BROWSER="brave-bin"
+export PATH=$PATH:"$HOME/.local/bin"
+
+# XDG Paths
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_DOCUMENTS_DIR=$HOME/src
+export XDG_DOWNLOAD_DIR=$HOME/tmp
+export XDG_MUSIC_DIR=$HOME/mus
+export XDG_PICTURES_DIR=$HOME/img
+export XDG_DESKTOP_DIR=$HOME
+
+# For QT Themes
+export QT_QPA_PLATFORMTHEME=kvantum
+
+# Auto disk mounter
+udiskie &
+
+# Auto Lock
+# xautolock -detectsleep -time 5 -locker "$(which lock)" -notify 10 -notifier "notify-send -u critical -t 10000 -- '   locking screen in 10 seconds'" &
+
+# Pipewire
+gentoo-pipewire-launcher & 
+
+# zsh config dir
+export ZDOTDIR=$HOME/.config/zsh
+
+# wallpaper and colorscheme
+$HOME/.local/bin/kwal -r &
+
+# compositor
+picom -b &
+
+# status bar
+slstatus &
+
+# clipmenu
+clipmenud &
