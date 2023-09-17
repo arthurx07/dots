@@ -49,6 +49,7 @@ vim.opt.completeopt = 'menuone,noselect' -- [!] completeopt to have a better com
 vim.opt.runtimepath = vim.opt.runtimepath + '/usr/share/vim/vimfiles'
 -- vim.o.showtabline = 2 -- always show tabline
 -- vim.opt.rtp:append('/usr/share/vim/vimfiles') -- enable gentoo-syntax, vim plugins enabled in nvim
+vim.opt.cursorline = true
 
 -- UNDOTREE[?]: disable swap+backup, but enable undodir/undofile 
 -- to be able to undo things from days ago
