@@ -9,12 +9,14 @@
   br = branch
   ci = commit
   co = checkout
-  # lo = log --oneline -n 15
-  lo = log
+  cl = clone
+  lo = log --oneline -n 15
+  # lo = log
   st = status
   up = pull --rebase
   re = restore
   last = log -1 HEAD
+  df = diff
 [push]
   default = current
 [core]
