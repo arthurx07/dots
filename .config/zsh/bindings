@@ -1,0 +1,49 @@
+## History
+# bindkey '^r' fh # Search history for command with 'foo' with fzf, and execute it on enter.
+# ctrl+r: searches history with fzf
+# ctrl+t, alt+c: searches directories with fzf
+
+## mans, gshow
+
+## Automatically expand aliases, when pressing space
+bindkey -M viins " " globalias # space expands all aliases, including global
+bindkey -M viins "^ " magic-space # control-space to make a normal space
+bindkey -M isearch " " magic-space # normal space during searches
+
+# Prepend doas to current command ctrl+s
+bindkey -M viins '^s' prepend-doas
+bindkey -M vicmd '^s' prepend-doas
+
+## Vi
+bindkey -v '^?' backward-delete-char # possibility to delete char in vi normal mode
+
+# Use vim keys in tab complete menu:
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+
+# Edit line in vim with ctrl-e
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
+bindkey -M vicmd '^e' edit-command-line
+
+# Delete characters with del key
+bindkey -M vicmd '^[[P' vi-delete-char
+bindkey -M visual '^[[P' vi-delete
+# bindkey '^[[P' delete-char # don't use, as breaks the other two
+
+## Extra
+bindkey -s '^o' '^un\n' # ctrl-o: change directory with nnn (see n function)
+bindkey -s '^a' '^ubc -lq\n' # ctrl+a: open `bc -lq` (a calculator)
+bindkey -s '^f' '^ucd "$(dirname "$(fzf)")"\n' # ctrl+f: change directory with fzf
+
+### Use whole line to search history
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^k" up-line-or-beginning-search # Up (^[[A)
+bindkey "^j" down-line-or-beginning-search # Down (^[[B)
+bindkey -M vicmd 'k' up-line-or-beginning-search
+bindkey -M vicmd 'j' down-line-or-beginning-search

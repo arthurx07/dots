@@ -1,0 +1,88 @@
+### Search history for command with 'foo' with fzf, and execute it on enter.
+# (now using fzf's key-bindings.zsh script, which comes w/ installation)
+# eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac --height 30% | sed 's/ *[0-9]* *//')
+
+### Prepend doas to a command and put your cursor back to the previous location with esc,d
+function prepend-doas {
+  if [[ $BUFFER != "doas "* ]]; then
+    BUFFER="doas $BUFFER"; CURSOR+=5
+  fi
+}
+zle -N prepend-doas
+
+### Make and change directory on the fly
+function md() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
+compdef _directories md
+
+### Change working directory with nnn file manager
+n ()
+{
+    # Block nesting of nnn in subshells
+    [ "${NNNLVL:-0}" -eq 0 ] || {
+        echo "nnn is already running"
+        return
+    }
+
+    # The behaviour is set to cd on quit (nnn checks if NNN_TMPFILE is set)
+    # If NNN_TMPFILE is set to a custom path, it must be exported for nnn to
+    # see. To cd on quit only on ^G, remove the "export" and make sure not to
+    # use a custom path, i.e. set NNN_TMPFILE *exactly* as follows:
+    #      NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+    export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+
+    # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
+    stty start undef
+    stty stop undef
+    stty lwrap undef
+    stty lnext undef
+
+    # The command builtin allows one to alias nnn to n, if desired, without
+    # making an infinitely recursive alias
+    command nnn "$@"
+
+    [ ! -f "$NNN_TMPFILE" ] || {
+        . "$NNN_TMPFILE"
+        rm -f "$NNN_TMPFILE" > /dev/null
+    }
+}
+
+### Interactive man search
+function mans(){
+    man -k . \
+    | fzf --height 40% -n1,2 --preview "echo {} \
+    | cut -d' ' -f1 \
+    | sed 's# (#.#' \
+    | sed 's#)##' \
+    | xargs -I% man %" --bind "enter:execute: \
+      (echo {} \
+      | cut -d' ' -f1 \
+      | sed 's# (#.#' \
+      | sed 's#)##' \
+      | xargs -I% man % \
+      | less -R)"
+}
+
+### Interactive git diff
+function gshow() {
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" \
+  | fzf --height 40% --ansi --preview "echo {} \
+    | grep -o '[a-f0-9]\{7\}' \
+    | head -1 \
+    | xargs -I % sh -c 'git show --color=always %'" \
+        --bind "enter:execute:
+            (grep -o '[a-f0-9]\{7\}' \
+                | head -1 \
+                | xargs -I % sh -c 'git show --color=always % \
+                | less -R') << 'FZF-EOF'
+            {}
+FZF-EOF"
+}
+
+## Automatically expand aliases
+globalias() {
+   zle _expand_alias
+   zle expand-word
+   zle self-insert
+}
+zle -N globalias

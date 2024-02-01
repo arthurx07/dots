@@ -1,0 +1,47 @@
+# Note: in prompt can use the name of a command, and not the alias, when using 'command' (surrendered with quotes)
+
+## Colorizers
+alias grep='grep --color=auto'
+alias ls='ls --color=auto --group-directories-first'
+
+## Misc
+alias ds='doas ' # space in definition, to allow following word to be interpreted as an alias
+alias tree='tree -a -I .git' # print all files except .git dir
+alias config='/usr/bin/git --git-dir=/home/tur/src/dots --work-tree=/home/tur' # git config for dots
+alias tsm='transmission-remote'
+alias p1++='g++ -ansi -O2 -DNDEBUG -D_GLIBCXX_DEBUG -Wall -Wextra -Werror -Wno-sign-compare -Wshadow'
+alias :q=exit
+
+## Memory/Process management
+alias df='df -h'
+alias free='free -h'
+alias psmem='ps auxf | sort -nr -k 4 | head -5' # get top process eating memory
+alias pscpu='ps auxf | sort -nr -k 3 | head -5' # get top process eating cpu ##
+# alias clean-ram="${PRIV} sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
+
+## Navigation
+alias .1="cd .."
+alias .2="cd ../.."
+alias .3="cd ../../.."
+alias mkdir='mkdir -pv'
+alias la='ls -A'
+alias lh='ls -lh'
+alias lah='ls -lAh'
+
+# Prevent errors (can ignore aliases with '')
+alias cp='cp -i'
+alias rm='rm -i'
+alias mv='mv -i'
+alias ln='ln -i'
+
+# zsh has an additional option for global aliases with the -g option which allows aliases at any part of the command line. 
+# Without the -g option aliases will only be matched at the beginning of a line or after an alias ending with a space.
+alias -g G='| grep' # pipe output to grep
+alias -g L='| less' # pipe output to less
+alias -g W='| wc -l' # pipe output to `wc` with option `
+# convert multiline output to single line and copy it to the system clipboard-l`
+alias -g C='| tr -d ''\n'' | xclip -selection clipboard'
+
+## fun :)
+# show top-run programs
+alias history-stat='history 0 | awk ''{print $2}'' | sort | uniq -c | sort -n -r | head'
