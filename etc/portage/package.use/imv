@@ -1,0 +1,10 @@
+# package.use
+
+# enable raw and webp support in media-gfx/imv
+media-libs/freeimage webp
+# webp: Add support for the WebP image format
+# raw: Add support for raw image formats
+	# imv: symbol lookup error: /usr/lib64/libraw.so.23: undefined symbol: __kmpc_global_thread_num 
+
+media-gfx/imv heif
+# heif: Enable support for ISO/IEC 23008-12:2017 HEIF/HEIC image format

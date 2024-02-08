@@ -1,0 +1,10 @@
+# /etc/portage/package.use/dolphin
+
+games-emulation/dolphin discord-presence gui pulseaudio -alsa 
+# alsa: Add support for media-libs/alsa-lib (Advanced Linux Sound Architecture)
+# discord-presence: Enables Discord Rich Presence, show the current game on Discord
+# gui: Enable support for a graphical user interface
+# pulseaudio: Add sound server support via media-libs/libpulse (may be PulseAudio or PipeWire)
+
+# required by games-emulation/dolphin
+sys-libs/zlib minizip

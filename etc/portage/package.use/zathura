@@ -1,0 +1,13 @@
+# /etc/portage/package.use/zathura
+
+# app-text/zathura synctex 
+# - Use libsynctex to get latex codeline from pdf
+# (to review)
+
+app-text/zathura-pdf-mupdf -javascript
+# javascript: Enable javascript support
+
+app-text/mupdf -javascript -opengl -ssl
+# javascript: Enable javascript support
+# opengl: Add support for OpenGL (3D graphics)
+# ssl: Add support for SSL/TLS connections (Secure Socket Layer / Transport Layer Security)

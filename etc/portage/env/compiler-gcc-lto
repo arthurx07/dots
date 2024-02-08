@@ -1,0 +1,29 @@
+# /etc/portage/env/compiler-gcc-lto
+# https://github.com/InBetweenNames/gentooLTO/blob/master/sys-config/ltoize/files/make.conf.lto.defines
+
+NTHREADS=auto
+
+FLTO="-flto=${NTHREADS}"
+IPAPTA="-fipa-pta"
+GRAPHITE="-fgraphite-identity -floop-nest-optimize" # enable graphite USE flag
+DEVIRTLTO="-fdevirtualize-at-ltrans"
+SEMINTERPOS="-fno-semantic-interposition"
+
+CC="gcc"
+CXX="g++"
+AR="gcc-ar"
+NM="gcc-nm"
+RANLIB="gcc-ranlib"
+STRIP="strip"
+OBJCOPY="objcopy"
+OBJDUMP="objdump"
+
+COMMON_FLAGS="${FLTO} ${IPAPTA} ${GRAPHITE} ${DEVIRTLTO} ${SEMINTERPOS} -O3 -pipe -march=native -fuse-linker-plugin" # -falign-functions=32
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS}"
+FCFLAGS="${COMMON_FLAGS}"
+FFLAGS="${COMMON_FLAGS}"
+
+LDFLAGS="-Wl,--as-needed" # [-Wl,O2 <- can't compile a single test error]
+
+# to do: document enabled flags

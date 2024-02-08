@@ -1,0 +1,16 @@
+# package.use
+
+# -*: disable all USE flags
+media-gfx/sane-backends -* # -usb -zeroconf -sane_backends_* # sane_backends_bh
+  # usb: Add USB support to applications that have optional USB support (e.g. cups)
+  # zeroconf: Support for DNS Service Discovery (DNS-SD)
+   # remove unnecessary sane_backends use flags for other hardware
+   # bh is not brother, is bell+howell xd
+
+# -sane_backends_* shows warning in smart-live-update
+
+# avahi is required by media-gfx/sane-airscan
+net-dns/avahi -qt5 -ipv6
+# gdbm: Add support for sys-libs/gdbm (GNU database libraries)
+# ipv6: Add support for IP version 6
+# qt5: Add support for the Qt 5 application and UI framework

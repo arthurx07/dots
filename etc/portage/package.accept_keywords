@@ -1,0 +1,196 @@
+# /etc/portage/package.accept_keywords
+
+# required for nvtop
+sys-process/nvtop
+
+# required by piper
+app-misc/piper
+dev-libs/libratbag
+
+# changing brightness external monitors
+app-misc/ddcutil
+
+# tty-clock
+app-misc/tty-clock
+
+# brightnessctl
+app-misc/brightnessctl
+
+# cpufetch
+app-misc/cpufetch
+
+# minecraft-launcher
+games-action/minecraft-launcher
+
+# pamixer
+=media-sound/pamixer-9999 **
+
+# kvantum
+x11-themes/kvantum
+
+# wpgtk - pywal git
+=x11-misc/wpgtk-9999 **
+=x11-misc/pywal-9999-r1 **
+
+# # scan with brother printer
+# media-gfx/brscan4
+# media-gfx/brscan-skey
+
+# # wallpaper-engine
+# =x11-misc/linux-wallpaperengine-9999 **
+
+# app-misc/trackma [ anime / manga tracker ]
+=net-misc/trackma-9999 **
+mpv-plugin/mpv-mpris
+dev-python/pypresence
+
+# catgirl irc client
+net-irc/catgirl
+
+# timeshift 
+# app-backup/timeshift
+
+# dmenu utilities
+=x11-misc/dmenu-todo-9999 **
+=x11-misc/dmenu-bluetooth-9999 **
+=x11-misc/dmenu-translate-9999 **
+=x11-misc/dmenu-shot-9999 **
+
+# iosevka
+media-fonts/iosevka
+
+# nerd-fonts-symbols
+media-fonts/nerd-fonts-symbols
+
+# steam
+# games-util/steam-client-meta
+# games-util/steam-launcher
+# games-util/steam-meta
+# games-util/game-device-udev-rules
+# sys-libs/libudev-compat
+
+# yuzu
+games-emulation/yuzu
+dev-cpp/cpp-jwt
+dev-util/vulkan-headers # 2023-09-08
+dev-util/vulkan-tools # by vulkan-headers
+media-libs/vulkan-loader # by vulkan-headers
+dev-util/volk # needed starting from vulkan-tools-1.3.275
+dev-libs/xbyak
+dev-libs/vulkan-memory-allocator
+
+# cemu
+games-emulation/cemu
+app-arch/zarchive
+
+# spicetify
+# =media-sound/spicetify-comfy-9999 **
+# =media-sound/spicetify-stats-bin-9999 **
+# media-sound/spicetify-marketplace-bin
+
+# nss wouldn't compile (from 2022.08 to 2022.12 xd)
+# >dev-libs/nss-3.68.4
+
+# encrypted-file-transfer
+=dev-python/encrypted-file-transfer-9999 **
+
+# transmission-rss
+dev-ruby/fakeweb
+dev-ruby/open_uri_redirections
+
+# syncplay
+# media-video/syncplay
+# dev-python/pem
+
+# houdoku
+# app-text/houdoku
+
+# amberol
+media-sound/amberol
+
+# ly
+# =x11-misc/ly-9999 **
+
+# # xwinwrap
+# =x11-misc/xwinwrap-9999 **
+#
+# # paperview
+# =x11-misc/paperview-9999 **
+
+# librewolf
+www-client/librewolf
+dev-libs/nss
+
+# bibata-xcursors
+x11-themes/bibata-xcursors
+
+# # plyvel
+# dev-python/plyvel
+# dev-util/google-perftools # remove when version 2.10 is marked as stable, as it is needed for supporting llvm-libunwind
+
+# pomo
+=app-misc/pomo-9999 **
+
+# igt-gpu-tools
+x11-apps/igt-gpu-tools
+
+# bashtop
+sys-process/bashtop
+
+# ttytimer
+=app-misc/tty-timer-9999 **
+
+# qpwgraph
+media-sound/qpwgraph
+
+# cproc
+sys-devel/cproc
+sys-devel/qbe
+
+# nyaa-scraper
+=net-p2p/nyaa-scraper-9999 **
+
+# # brother-dcpj562dw
+# net-print/brother-dcpj562dw-bin
+#
+# # scroll
+# x11-misc/scroll
+
+# slstatus
+=x11-misc/slstatus-9999 **
+
+# abduco
+app-misc/abduco
+
+# loksh
+# app-shells/loksh
+
+# keynav
+=x11-misc/keynav-9999 **
+
+# colorpicker
+=x11-misc/colorpicker-9999 **
+
+# fastfetch
+app-misc/fastfetch
+dev-libs/yyjson
+
+# yt-dlp nightly, to work with crunchyroll
+# =net-misc/yt-dlp-9999 **
+
+# spt
+# =app-misc/spt-9999-r1 **
+
+# nnn, get latest version
+app-misc/nnn
+
+# animated wallpapers
+# =x11-misc/linux-wallpaperengine-9999 **
+=x11-misc/paperview-9999 **
+=x11-misc/xwinwrap-9999 **
+
+# C markdown parser
+app-text/md4c
+
+# autosuggestions for zsh
+app-shells/zsh-autosuggestions

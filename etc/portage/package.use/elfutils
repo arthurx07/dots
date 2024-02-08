@@ -1,0 +1,4 @@
+# /etc/portage/package.use/elfutils
+
+dev-libs/elfutils -utils
+# utils: Install command-line utilities (all the eu-* programs)

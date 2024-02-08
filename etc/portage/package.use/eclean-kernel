@@ -1,0 +1,4 @@
+# /etc/portage/package.use/eclean-kernel
+
+app-admin/eclean-kernel zstd
+# Enable support for ZSTD compression

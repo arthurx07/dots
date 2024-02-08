@@ -1,0 +1,55 @@
+# /etc/portage/sets/optfeature
+
+# app-admin/pass
+# app-admin/pass-otp # A pass extension for managing one-time-password (OTP) tokens
+# Disabled, as already using phone (can't have both at the same time)
+
+# app-text/zathura
+app-text/zathura-cb # Comic book plug-in for zathura with 7zip, rar, tar and zip support
+app-text/zathura-pdf-mupdf # PDF (mupdf) plug-in for zathura
+
+# app-editors/neovim [telescope plugin]
+sys-apps/fd # Alternative to find that provides sensible defaults for 80% of the use cases (used by fzf, telescope)
+sys-apps/ripgrep # Necessary for Telescope to search strings in files (<Leader>ps keymap)
+
+# media-sound/beets
+dev-python/pyacoustid # for chromaprint support
+media-libs/chromaprint # for chromaprint support
+# move dev-python/discogs-client dev-python/python3-discogs-client
+dev-python/python3-discogs-client # for discogs support
+dev-python/pylast # for lastfm support
+
+# media-sound/spotify <- uninstalled it so :)
+# media-sound/spicetify
+# media-sound/spicetify-comfy
+# media-sound/spicetify-marketplace-bin
+# media-sound/spicetify-stats-bin
+
+# net-misc/trackma-gtk
+dev-python/pypresence # discord rich presence support
+
+# net-p2p/transmission
+net-p2p/transmission-rss # to add torrents from RSS feeds to Transmission
+# net-p2p/tremc # Ncurses interface for the Transmission BitTorrent client
+
+# net-print/cups
+# app-admin/system-config-printer # better cups ui
+net-print/cups-pdf # Provides a virtual printer for CUPS to produce PDF files
+
+# xfce-base/thunar
+xfce-base/tumbler # A thumbnail service for Thunar
+xfce-extra/thunar-archive-plugin # Archive plug-in for the Thunar filemanager
+xfce-extra/thunar-media-tags-plugin # Adds special features for media files to the Thunar File Manager
+xfce-extra/thunar-vcs-plugin # Adds Subversion and GIT actions to the context menu of thunar
+# xfce-base/thunar-volman # Daemon that enforces volume-related policies
+
+# x11-misc/pywal
+x11-misc/hsetroot # Tool which allows you to compose wallpapers ('root pixmaps') for X
+
+# sane-backends
+media-gfx/sane-airscan # SANE backend for AirScan (eSCL) and WSD document scanners // Network scanner backend
+
+# app-shells/zsh
+app-shells/zsh-syntax-highlighting
+app-shells/zsh-completions
+app-shells/zsh-autosuggestions

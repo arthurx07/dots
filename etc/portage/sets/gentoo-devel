@@ -1,0 +1,29 @@
+# /etc/portage/sets/gentoo-devel
+# tools used for gentoo development and maintaining
+
+app-admin/eclean-kernel # Remove outdated built kernels
+
+app-eselect/eselect-repository # Manage repos.conf via eselect
+
+app-portage/eix # Search and query ebuilds
+app-portage/elogv # Curses based utility to parse the contents of elogs created by Portage
+app-portage/genlop # A nice emerge.log parser
+app-portage/gentoolkit # Collection of administration scripts for Gentoo
+# -> ebump, eclean, enalyze, epkginfo, equery, eread, eshowkw, euse, imlate, revdep-rebuild
+app-portage/metagen # metadata.xml generator for ebuilds
+app-portage/portpeek # A helper program for maintaining the package.keyword and package.unmask files
+app-portage/smart-live-rebuild # Check live packages for updates and emerge them as necessary
+app-portage/ufed # Gentoo Linux USE flags editor
+# app-portage/pfl # Searchable online file/package database for Gentoo (Portage File List)
+app-portage/portage-utils # q applets (Small and fast Portage helper tools written in C)
+# -> qatom, qcheck, qdepends, qfile, qgrep, qkeyword, qlist, qlop, qmanifest, qmerge,
+# -> qpkg, qsesarch, qsize, qtbz2, qtegrity, quse, qwhich, qxpak
+
+app-shells/gentoo-bashcomp  # Gentoo-specific bash command-line completions (emerge, ebuild, equery, etc)
+app-shells/gentoo-zsh-completions # Gentoo specific zsh completion support (includes emerge and ebuild commands)
+
+dev-util/pkgcheck # pkgcore-based QA utility for ebuild repos
+dev-util/pkgdev # Collection of tools for Gentoo development
+
+sys-kernel/dracut # Generic initramfs generation tool
+sys-kernel/genkernel # Gentoo automatic kernel building scripts (using it for initramfs)

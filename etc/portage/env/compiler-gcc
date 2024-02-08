@@ -1,0 +1,17 @@
+# /etc/portage/env/compiler-gcc
+
+CC="gcc"
+CXX="g++"
+AR="gcc-ar"
+NM="gcc-nm"
+RANLIB="gcc-ranlib"
+STRIP="strip"
+OBJCOPY="objcopy"
+OBJDUMP="objdump"
+
+CFLAGS="-O3 -pipe -march=native" # -falign-functions=32"
+CXXFLAGS="${CFLAGS}"
+FCFLAGS="${CFLAGS}"
+FFLAGS="${CFLAGS}"
+
+LDFLAGS="-Wl,-O2 -Wl,--as-needed"

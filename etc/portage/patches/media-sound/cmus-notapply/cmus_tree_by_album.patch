@@ -1,0 +1,89 @@
+diff --git a/comment.c b/comment.c
+index 13ba7f0..4b3894d 100644
+--- a/comment.c
++++ b/comment.c
+@@ -60,7 +60,7 @@ int track_is_compilation(const struct keyval *comments)
+
+ int track_is_va_compilation(const struct keyval *comments)
+ {
+-	const char *c, *a, *aa;
++	/*const char *c, *a, *aa;
+
+ 	aa = keyvals_get_val(comments, "albumartist");
+ 	if (aa)
+@@ -76,38 +76,39 @@ int track_is_va_compilation(const struct keyval *comments)
+
+ 	c = keyvals_get_val(comments, "partofacompilation");
+ 	if (c && is_freeform_true(c))
+-		return 1;
++		return 1;*/
+
+ 	return 0;
+ }
+
+ const char *comments_get_albumartist(const struct keyval *comments)
+ {
+-	const char *val = keyvals_get_val(comments, "albumartist");
++	/*const char *val = keyvals_get_val(comments, "albumartist");
+
+ 	if (!val || strcmp(val, "") == 0)
+ 		val = keyvals_get_val(comments, "artist");
+
+-	return val;
++	return val;*/
++    return "<Various Albums>";
+ }
+
+ const char *comments_get_artistsort(const struct keyval *comments)
+ {
+-	const char *val;
++	//const char *val;
+
+-	if (track_is_va_compilation(comments))
+-		return NULL;
++	/*if (track_is_va_compilation(comments))
++		return NULL;*/
+
+-	val = keyvals_get_val(comments, "albumartistsort");
+-	if (!track_is_compilation(comments)) {
++	//val = keyvals_get_val(comments, "albumartistsort");
++	/*if (!track_is_compilation(comments)) {
+ 		if (!val || strcmp(val, "") == 0)
+ 			val = keyvals_get_val(comments, "artistsort");
+ 	}
+
+ 	if (!val || strcmp(val, "") == 0)
+-		return NULL;
++		return NULL;*/
+
+-	return val;
++	return NULL;
+ }
+
+ int comments_get_int(const struct keyval *comments, const char *key)
+diff --git a/tree.c b/tree.c
+index 7cad3e3..311077e 100644
+--- a/tree.c
++++ b/tree.c
+@@ -519,7 +519,7 @@ static struct artist *artist_new(const char *name, const char *sort_name, int is
+ 	a->collkey_name = u_strcasecoll_key(a->name);
+ 	a->collkey_sort_name = u_strcasecoll_key0(a->sort_name);
+ 	a->collkey_auto_sort_name = u_strcasecoll_key0(a->auto_sort_name);
+-	a->expanded = 0;
++	a->expanded = 1;
+ 	a->is_compilation = is_compilation;
+ 	rb_root_init(&a->album_root);
+
+diff --git a/ui_curses.c b/ui_curses.c
+index ecb89d1..10103d0 100644
+--- a/ui_curses.c
++++ b/ui_curses.c
+@@ -954,7 +954,7 @@ static void update_window(struct window *win, int x, int y, int w, const char *t
+ static void update_tree_window(void)
+ {
+ 	char title[PRINT_BUFFER_SZ];
+-	format_str(title, "Artist / Album", tree_win_w - 1);
++	format_str(title, "Album", tree_win_w - 1);
+ 	update_window(lib_tree_win, tree_win_x, 0, tree_win_w, title, print_tree);
+ }
+

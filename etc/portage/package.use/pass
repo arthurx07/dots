@@ -1,0 +1,4 @@
+# /etc/portage/package.use/pass
+
+app-admin/pass dmenu
+# dmenu: Add support for x11-misc/dmenu with the 'passmenu' program

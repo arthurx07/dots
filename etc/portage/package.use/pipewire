@@ -1,0 +1,7 @@
+# /etc/portage/package.use/pipewire
+
+media-video/pipewire echo-cancel sound-server pipewire-alsa jack-sdk
+#   echo-cancel: Enable WebRTC-based echo canceller via media-libs/webrtc-audio-processing
+#   sound-server: Provide sound server using ALSA and bluetooth devices
+#   pipewire-alsa: Replace PulseAudio's ALSA plugin with PipeWire's plugin
+#   jack-sdk: Use PipeWire as JACK replacement

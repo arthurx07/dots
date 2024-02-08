@@ -1,0 +1,9 @@
+# /etc/portage/sets/python-devel
+# tools used for python development
+
+# dev-python/black # The uncompromising Python code formatter
+# dev-python/chardet # Universal encoding detector
+dev-python/pip # The PyPA recommended tool for installing Python packages
+
+# app-editors/neovim
+dev-python/pynvim # python client for neovim

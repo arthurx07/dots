@@ -1,0 +1,23 @@
+diff --git a/todo-dmenu b/todo-dmenu
+index 5e77d74..ec8c0d4 100755
+--- a/todo-dmenu
++++ b/todo-dmenu
+@@ -25,15 +25,15 @@
+ #
+
+ # Path to utilities
+-dmenu='/usr/bin/dmenu'
++dmenu='/usr/bin/dmenu -i'
+ echo_with_nl='printf %b'
+ remove_empty_lines='sed /^\s*$/d'
+
+ # Current time
+-the_time=`date "+%F %T"`
++the_time=`date "+%b %d %Y %R"`
+
+ # Todo folder
+-todo_folder=${HOME}/.todo-dmenu
++todo_folder=${XDG_CONFIG_HOME}/todo-dmenu
+ todo_tmp=/tmp/todo-dmenu-tmp
+
+ # Create the todo folder if necessary

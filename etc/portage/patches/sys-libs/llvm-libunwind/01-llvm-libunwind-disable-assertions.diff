@@ -1,0 +1,24 @@
+Solves runtime warning 'libunwind: __unw_add_dynamic_fde: bad fde: FDE is really a CIE'
+https://github.com/llvm/llvm-project/issues/86#issuecomment-1368030612
+https://github.com/llvm/llvm-project/issues/55584#issuecomment-1400179068
+
+Gentoo's ebuild enables assertions only when using use flag [test]; but -DNDEBUG isn't enabled as I suppose
+uppercase_CMAKE_BUILD_TYPE STREQUAL != "DEBUG"
+So: remove if ( ... "DEBUG") and enable add_compile_flags(-DNDEBUG) always
+---
+diff --git a/libunwind/CMakeLists.txt b/libunwind/CMakeLists.txt
+--- a/libunwind/CMakeLists.txt
++++ b/libunwind/CMakeLists.txt
+@@ -235,11 +235,9 @@
+   if (NOT uppercase_CMAKE_BUILD_TYPE STREQUAL "DEBUG")
+     add_compile_flags(-UNDEBUG)
+   endif()
+ else()
+-  if (uppercase_CMAKE_BUILD_TYPE STREQUAL "DEBUG")
+-    add_compile_flags(-DNDEBUG)
+-  endif()
++  add_compile_flags(-DNDEBUG)
+ endif()
+ 
+ # Cross-unwinding
+ if (NOT LIBUNWIND_ENABLE_CROSS_UNWINDING)

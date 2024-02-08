@@ -1,0 +1,3 @@
+# /etc/portage/package.use/cups-filters
+
+net-print/cups-filters -postscript -tiff

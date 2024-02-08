@@ -1,0 +1,3 @@
+# /etc/portage/env/notmpfs
+
+PORTAGE_TMPDIR="/var/tmp/notmpfs"

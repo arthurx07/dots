@@ -1,0 +1,11 @@
+# /etc/portage/package.use/poppler
+
+app-text/poppler utils -cairo -qt5 -tiff -jpeg -jpeg2k -png -qt5 -qt6
+# cairo         : Enable support for the cairo graphics library
+# jpeg          : Add JPEG image support
+# jpeg2k        : Support for JPEG 2000, a wavelet-based image compression format
+# nss           : Enable signatures handling with dev-libs/nss
+# png           : Add support for libpng (PNG images)
+# qt5           : Add support for the Qt 5 application and UI framework
+# tiff          : Add support for the TIFF image format
+# utils         : Install command-line PDF converters and various utilities.

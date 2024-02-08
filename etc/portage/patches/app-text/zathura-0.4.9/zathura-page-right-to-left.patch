@@ -1,0 +1,157 @@
+diff --git a/zathura/callbacks.c b/zathura/callbacks.c
+index 7db22f8..a8db4ed 100644
+--- a/zathura/callbacks.c
++++ b/zathura/callbacks.c
+@@ -254,7 +254,10 @@ cb_page_layout_value_changed(girara_session_t* session, const char* name, girara
+   unsigned int page_padding = 1;
+   girara_setting_get(zathura->ui.session, "page-padding", &page_padding);
+ 
+-  page_widget_set_mode(zathura, page_padding, pages_per_row, first_page_column);
++  bool page_right_to_left = false;
++  girara_setting_get(zathura->ui.session, "page-right-to-left", &page_right_to_left);
++
++  page_widget_set_mode(zathura, page_padding, pages_per_row, first_page_column, page_right_to_left);
+   zathura_document_set_page_layout(zathura->document, page_padding, pages_per_row, first_page_column);
+ }
+ 
+diff --git a/zathura/config.c b/zathura/config.c
+index d3fe43a..094e37e 100644
+--- a/zathura/config.c
++++ b/zathura/config.c
+@@ -152,6 +152,8 @@ config_load_default(zathura_t* zathura)
+   girara_setting_add(gsession, "pages-per-row",         &int_value,   INT,    false, _("Number of pages per row"),  cb_page_layout_value_changed, NULL);
+   int_value = 1;
+   girara_setting_add(gsession, "first-page-column",     "1:2",        STRING, false, _("Column of the first page"), cb_page_layout_value_changed, NULL);
++  bool_value = false;
++  girara_setting_add(gsession, "page-right-to-left",    &bool_value,  BOOLEAN, false, _("Render pages from right to left"),  cb_page_layout_value_changed, NULL);
+   float_value = 40;
+   girara_setting_add(gsession, "scroll-step",           &float_value, FLOAT,  false, _("Scroll step"),              NULL, NULL);
+   float_value = 40;
+diff --git a/zathura/database-plain.c b/zathura/database-plain.c
+index 6c933fd..d3149e3 100644
+--- a/zathura/database-plain.c
++++ b/zathura/database-plain.c
+@@ -27,6 +27,7 @@
+ #define KEY_SCALE                 "scale"
+ #define KEY_ROTATE                "rotate"
+ #define KEY_PAGES_PER_ROW         "pages-per-row"
++#define KEY_PAGE_RIGHT_TO_LEFT    "page-right-to-left"
+ #define KEY_FIRST_PAGE_COLUMN     "first-page-column"
+ #define KEY_POSITION_X            "position-x"
+ #define KEY_POSITION_Y            "position-y"
+@@ -554,6 +555,7 @@ plain_set_fileinfo(zathura_database_t* db, const char* file, zathura_fileinfo_t*
+   g_key_file_set_integer(priv->history, name, KEY_ROTATE,            file_info->rotation);
+   g_key_file_set_integer(priv->history, name, KEY_PAGES_PER_ROW,     file_info->pages_per_row);
+   g_key_file_set_string(priv->history, name, KEY_FIRST_PAGE_COLUMN,  file_info->first_page_column_list);
++  g_key_file_set_boolean(priv->history, name, KEY_PAGE_RIGHT_TO_LEFT,file_info->page_right_to_left);
+   g_key_file_set_double (priv->history, name, KEY_POSITION_X,        file_info->position_x);
+   g_key_file_set_double (priv->history, name, KEY_POSITION_Y,        file_info->position_y);
+   g_key_file_set_integer(priv->history, name, KEY_TIME,              time(NULL));
+@@ -596,6 +598,9 @@ plain_get_fileinfo(zathura_database_t* db, const char* file, zathura_fileinfo_t*
+   if (g_key_file_has_key(priv->history, name, KEY_FIRST_PAGE_COLUMN, NULL) == TRUE) {
+     file_info->first_page_column_list = g_key_file_get_string(priv->history, name, KEY_FIRST_PAGE_COLUMN, NULL);
+   }
++  if (g_key_file_has_key(priv->history, name, KEY_PAGE_RIGHT_TO_LEFT, NULL) == TRUE) {
++    file_info->page_right_to_left = g_key_file_get_boolean(priv->history, name, KEY_PAGE_RIGHT_TO_LEFT, NULL);
++  }
+   if (g_key_file_has_key(priv->history, name, KEY_POSITION_X, NULL) == TRUE) {
+     file_info->position_x        = g_key_file_get_double(priv->history, name, KEY_POSITION_X, NULL);
+   }
+diff --git a/zathura/database.h b/zathura/database.h
+index 7c76407..f60c163 100644
+--- a/zathura/database.h
++++ b/zathura/database.h
+@@ -15,6 +15,7 @@ typedef struct zathura_fileinfo_s {
+   double scale;
+   unsigned int rotation;
+   unsigned int pages_per_row;
++  bool page_right_to_left;
+   char* first_page_column_list;
+   double position_x;
+   double position_y;
+diff --git a/zathura/zathura.c b/zathura/zathura.c
+index 938aed3..4d8c73a 100644
+--- a/zathura/zathura.c
++++ b/zathura/zathura.c
+@@ -806,6 +806,7 @@ document_open(zathura_t* zathura, const char* path, const char* uri, const char*
+     .rotation = 0,
+     .pages_per_row = 0,
+     .first_page_column_list = NULL,
++    .page_right_to_left = false,
+     .position_x = 0,
+     .position_y = 0
+   };
+@@ -995,6 +996,7 @@ document_open(zathura_t* zathura, const char* path, const char* uri, const char*
+   unsigned int pages_per_row = 1;
+   char* first_page_column_list = NULL;
+   unsigned int page_padding = 1;
++  bool page_right_to_left = false;
+ 
+   girara_setting_get(zathura->ui.session, "page-padding", &page_padding);
+ 
+@@ -1020,7 +1022,10 @@ document_open(zathura_t* zathura, const char* path, const char* uri, const char*
+   g_free(file_info.first_page_column_list);
+   g_free(first_page_column_list);
+ 
+-  page_widget_set_mode(zathura, page_padding, pages_per_row, first_page_column);
++  //girara_setting_get(zathura->ui.session, "page-right-to-left", &page_right_to_left);
++  page_right_to_left = file_info.page_right_to_left;
++
++  page_widget_set_mode(zathura, page_padding, pages_per_row, first_page_column, page_right_to_left);
+   zathura_document_set_page_layout(zathura->document, page_padding, pages_per_row, first_page_column);
+ 
+   girara_set_view(zathura->ui.session, zathura->ui.page_widget);
+@@ -1185,6 +1190,7 @@ save_fileinfo_to_db(zathura_t* zathura)
+     .rotation = zathura_document_get_rotation(zathura->document),
+     .pages_per_row = 1,
+     .first_page_column_list = "1:2",
++    .page_right_to_left = false,
+     .position_x = zathura_document_get_position_x(zathura->document),
+     .position_y = zathura_document_get_position_y(zathura->document)
+   };
+@@ -1193,6 +1199,8 @@ save_fileinfo_to_db(zathura_t* zathura)
+                      &(file_info.pages_per_row));
+   girara_setting_get(zathura->ui.session, "first-page-column",
+                      &(file_info.first_page_column_list));
++  girara_setting_get(zathura->ui.session, "page-right-to-left",
++                     &(file_info.page_right_to_left));
+ 
+   /* save file info */
+   zathura_db_set_fileinfo(zathura->database, path, &file_info);
+@@ -1334,7 +1342,8 @@ statusbar_page_number_update(zathura_t* zathura)
+ 
+ void
+ page_widget_set_mode(zathura_t* zathura, unsigned int page_padding,
+-                     unsigned int pages_per_row, unsigned int first_page_column)
++                     unsigned int pages_per_row, unsigned int first_page_column,
++                     bool page_right_to_left)
+ {
+   /* show at least one page */
+   if (pages_per_row == 0) {
+@@ -1365,6 +1374,9 @@ page_widget_set_mode(zathura_t* zathura, unsigned int page_padding,
+     int y = (i + first_page_column - 1) / pages_per_row;
+ 
+     GtkWidget* page_widget = zathura->pages[i];
++    if (page_right_to_left) {
++      x = pages_per_row - 1 - x;
++    }
+ 
+     gtk_grid_attach(GTK_GRID(zathura->ui.page_widget), page_widget, x, y, 1, 1);
+   }
+diff --git a/zathura/zathura.h b/zathura/zathura.h
+index 84e0cb6..c2dad88 100644
+--- a/zathura/zathura.h
++++ b/zathura/zathura.h
+@@ -387,9 +387,11 @@ bool adjust_view(zathura_t* zathura);
+  * @param page_padding padding in pixels between pages
+  * @param pages_per_row Number of shown pages per row
+  * @param first_page_column Column on which first page start
++ * @param page_right_to_left Render pages right to left
+  */
+ void page_widget_set_mode(zathura_t* zathura, unsigned int page_padding,
+-                          unsigned int pages_per_row, unsigned int first_page_column);
++                          unsigned int pages_per_row, unsigned int first_page_column,
++                          bool page_right_to_left);
+ 
+ /**
+  * Updates the page number in the statusbar. Note that 1 will be added to the

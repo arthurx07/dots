@@ -1,0 +1,9 @@
+# /etc/portage/package.use/ytfzf
+
+net-misc/ytfzf -minimal thumbnails
+# minimal: install fzf, mpv, yt-dlp
+# thumbnails: install ueberzug
+
+# -> other packages may be required for other use cases (dmenu, libnotify)
+# "external menu support" x11-misc/dmenu
+# "desktop notifications" x11-libs/libnotify

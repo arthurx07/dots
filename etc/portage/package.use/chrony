@@ -1,0 +1,8 @@
+# /etc/portage/package.use/chrony
+
+net-misc/chrony -cmdmon -ntp -phc -refclock
+# cmdmon: Support for command and monitoring
+# ntp: Support for the Network Time Protocol (NTP) [using nts]
+# phc: Support for the PTP (Precision Time Protocol) Hardware Clock (PHC) interface
+# readline: Enable support for libreadline, a GNU line-editing library that almost everyone wants
+# refclock: Support for reference clocks

@@ -1,0 +1,14 @@
+diff --git a/config.def.h b/config.def.h
+index 05e03f3..f68df67 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -29,7 +29,7 @@ static const int timetocancel = 4;
+ static const char* pam_service = "login";
+ 
+ /* Background image path, should be available to the user above */
+-static const char* background_image = "";
++static const char* background_image = "/home/tur/.config/wpg/.current";
+ 
+ /* allow control key to trigger fail on clear */
+-static const int controlkeyclear = 0;
++static const int controlkeyclear = 1;

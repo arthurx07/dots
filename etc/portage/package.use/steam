@@ -1,0 +1,223 @@
+## /etc/portage/package.use/steam
+#
+## games-util/steam-meta-0-r20220320
+## games-util/steam-client-meta-0-r20221017
+## games-util/steam-launcher-1.0.0.76
+#
+## required by games-util/steam-client-meta[video_cards_nvidia]
+## required by games-util/steam-meta
+#x11-drivers/nvidia-drivers abi_x86_32
+#
+## required by media-libs/mesa
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#media-libs/libglvnd abi_x86_32
+#
+## required by x11-libs/libXrandr
+## required by media-libs/mesa[X]
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#x11-libs/libX11 abi_x86_32
+#
+## required by media-libs/mesa[X]
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#x11-libs/libXext abi_x86_32
+#
+## required by media-libs/mesa[X]
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#x11-libs/libxcb abi_x86_32
+#
+## required by x11-libs/libxcb
+## required by media-libs/mesa[X]
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#x11-libs/libXau abi_x86_32
+#
+## required by x11-libs/libxcb
+## required by media-libs/mesa[X]
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#x11-libs/libXdmcp abi_x86_32
+#
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#virtual/opengl abi_x86_32
+#
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#media-libs/mesa abi_x86_32
+#
+## required by media-libs/mesa
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#dev-libs/expat abi_x86_32
+#
+## required by sys-devel/llvm
+## required by media-libs/mesa[-video_cards_radeon,-video_cards_r600,-opencl,llvm,-video_cards_radeonsi]
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#sys-libs/zlib abi_x86_32
+#
+## required by media-libs/mesa[wayland]
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#dev-libs/wayland abi_x86_32
+#
+## required by media-libs/mesa
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#x11-libs/libdrm abi_x86_32
+#
+## required by media-libs/mesa[X]
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#x11-libs/libxshmfence abi_x86_32
+#
+## required by media-libs/mesa[X]
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#x11-libs/libXxf86vm abi_x86_32
+#
+## required by media-libs/mesa[X]
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#x11-libs/libXfixes abi_x86_32
+#
+## required by media-libs/mesa[zstd]
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#app-arch/zstd abi_x86_32
+#
+## required by media-libs/mesa[-video_cards_radeon,-video_cards_r600,-opencl,llvm,-video_cards_radeonsi]
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#sys-devel/llvm abi_x86_32
+#
+## required by media-libs/mesa[X]
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#x11-libs/libXrandr abi_x86_32
+#
+## required by x11-libs/libXrandr
+## required by media-libs/mesa[X]
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#x11-libs/libXrender abi_x86_32
+#
+## required by sys-devel/llvm[libffi]
+## required by media-libs/mesa[-video_cards_radeon,-video_cards_r600,-opencl,llvm,-video_cards_radeonsi]
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#dev-libs/libffi abi_x86_32
+#
+## required by sys-devel/llvm[ncurses]
+## required by media-libs/mesa[-video_cards_radeon,-video_cards_r600,-opencl,llvm,-video_cards_radeonsi]
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#sys-libs/ncurses abi_x86_32
+#
+## required by sys-devel/llvm[xml]
+## required by media-libs/mesa[-video_cards_radeon,-video_cards_r600,-opencl,llvm,-video_cards_radeonsi]
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#dev-libs/libxml2 abi_x86_32
+#
+## required by dev-libs/libxml2[icu]
+## required by sys-devel/llvm[xml]
+## required by media-libs/mesa[-video_cards_radeon,-video_cards_r600,-opencl,llvm,-video_cards_radeonsi]
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#dev-libs/icu abi_x86_32
+#
+## required by sys-libs/ncurses[gpm]
+## required by sys-devel/llvm[ncurses]
+## required by media-libs/mesa[-video_cards_radeon,-video_cards_r600,-opencl,llvm,-video_cards_radeonsi]
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#sys-libs/gpm abi_x86_32
+#
+## required by x11-libs/libdrm[video_cards_intel]
+## required by media-libs/mesa
+## required by virtual/opengl
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#x11-libs/libpciaccess abi_x86_32
+#
+## required by games-util/steam-client-meta-0-r20230807
+## required by games-util/steam-meta
+#>=sys-libs/libudev-compat-186-r1 abi_x86_32
+#
+## required by sys-libs/libudev-compat-186-r1
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#virtual/libudev abi_x86_32
+#
+## required by virtual/libudev[-systemd]
+## required by sys-libs/libudev-compat
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#sys-apps/systemd-utils abi_x86_32
+#
+## required by sys-apps/systemd-utils[udev]
+## required by virtual/libudev[-systemd]
+## required by sys-libs/libudev-compat
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#sys-apps/util-linux abi_x86_32
+#
+## required by sys-apps/systemd-utils[udev]
+## required by virtual/libudev[-systemd]
+## required by sys-libs/libudev-compat
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#sys-libs/libcap abi_x86_32
+#
+## required by sys-libs/libcap[pam]
+## required by sys-apps/systemd-utils[udev]
+## required by virtual/libudev[-systemd]
+## required by sys-libs/libudev-compat
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#sys-libs/pamabi_x86_32
+#
+## required by sys-libs/libcap[pam]
+## required by sys-apps/systemd-utils[udev]
+## required by virtual/libudev[-systemd]
+## required by sys-libs/libudev-compat
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#sys-libs/pam abi_x86_32
+#
+## required by sys-libs/pam
+## required by sys-libs/libcap[pam]
+## required by sys-apps/systemd-utils[udev]
+## required by virtual/libudev[-systemd]
+## required by sys-libs/libudev-compat
+## required by games-util/steam-client-meta
+## required by games-util/steam-meta
+#virtual/libintl abi_x86_32

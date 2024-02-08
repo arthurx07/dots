@@ -1,0 +1,4 @@
+# /etc/portage/package.use/trackma
+
+net-misc/trackma gtk ncurses -qt5 -cli -ncurses
+# remove qt5 (Qt 5 application and UI framework) and cli support and ncurses

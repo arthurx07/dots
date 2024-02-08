@@ -1,0 +1,3 @@
+# /etc/portage/package.use/st
+
+x11-terms/st -savedconfig

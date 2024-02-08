@@ -1,0 +1,4 @@
+# /etc/portage/package.use/img2pdf
+
+media-gfx/img2pdf -gui
+# gui: Enable support for a graphical user interface

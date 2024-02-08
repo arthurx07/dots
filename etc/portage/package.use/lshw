@@ -1,0 +1,4 @@
+# /etc/portage/package.use/lshw
+
+sys-apps/lshw -gtk
+# gtk: Add support for x11-libs/gtk+ (The GIMP Toolkit)

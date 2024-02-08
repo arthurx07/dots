@@ -1,0 +1,4 @@
+# /etc/portage/package.use/freetype
+
+media-libs/freetype -svg
+# * The "svg" [profile enabled] USE flag only has effect when the "utils" USE flag is also enabled.

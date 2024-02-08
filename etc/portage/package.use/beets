@@ -1,0 +1,12 @@
+# /etc/portage/package.use/beets
+
+# @optfeature media-sound/beets
+media-libs/chromaprint tools # extend media-sound/beets functionality
+
+# required by dev-python/pyacoustid
+# @optfeature dev-python/pyacoustid
+dev-python/audioread ffmpeg
+
+# httpx is required by dev-python/pylast
+dev-python/httpx -cli
+# cli: Install the CLI "httpx" client. 

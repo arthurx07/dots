@@ -1,0 +1,31 @@
+# /etc/portage/package.use/ffmpeg
+
+media-video/ffmpeg libass network -alsa -dav1d -iconv -mp3 -opengl -vulkan -postproc -svg -truetype
+# libass: SRT/SSA/ASS (SubRip / SubStation Alpha) subtitle support
+# alsa: Add support for media-libs/alsa-lib (Advanced Linux Sound Architecture)
+# dav1d: Enables AV1 decoding via media-libs/dav1d.
+# iconv: Enable support for the iconv character set conversion library
+# mp3: Add support for reading mp3 files
+# network: Enables network streaming support (for mpv to stream videos from youtube, invidious, etc.)
+# opengl: Add support for OpenGL (3D graphics) # ¿why does ffmpeg need vulkan/opengl?
+# vulkan: Add support for 3D graphics and computing via the Vulkan cross-platform API
+# opus: Enable Opus audio codec support
+# pic: Force shared libraries to be built as PIC (this is slower)
+# postproc: Build and install libpostproc.
+# svg: Add support for SVG (Scalable Vector Graphics)
+# truetype: Enables drawtext filter via media-libs/freetype and media-libs/harfbuzz.
+
+
+media-video/ffmpeg -fftools_ismindex -fftools_cws2fws -fftools_sidxindex -fftools_trasher -fftools_ffescape -fftools_ffhash -fftools_fourcc2pixfmt -fftools_graph2dot -fftools_pktdumper -fftools_aviocat -fftools_ffeval -fftools_qt-faststart
+# fftools_ismindex: A tool for creating smooth streaming manifests.
+# fftools_cws2fws: converts cws files (Macromedia Flash, compressed) to fws ones (Macromedia Flash, uncompressed).
+# fftools_sidxindex: Write an MPD file for fragmented MP4 files with a sidx index at the start of the file.
+# fftools_trasher: Writes burts of random data into a file. Great for testing error robustness/resilience/concealment.
+# fftools_ffescape: Escapes an input string, adopting the av_get_token() escaping logic.
+# fftools_ffhash: Computes a file's digest using libavutil algorithms.
+# fftools_fourcc2pixfmt: Shows the relationships between rawvideo pixel formats and FourCC tags.
+# fftools_graph2dot: A tool to convert a libavfilter graph to a dot file.
+# fftools_pktdumper: Dumps packets as demuxed by libavformat.
+# fftools_aviocat: cat's a URL to another one, useful for dumping streams.
+# fftools_ffeval: A simple expression evalutor.
+# fftools_qt-faststart: Rearranges a Quicktime file to facilitate network streaming.

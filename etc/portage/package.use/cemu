@@ -1,0 +1,16 @@
+# /etc/portage/package.use/cemu
+
+games-emulation/cemu discord
+#   discord: Enable discord RPC support
+
+# required by x11-libs/wxGTK
+# required by games-emulation/cemu
+dev-libs/libpcre2 pcre32
+
+# required by games-emulation/cemu
+media-libs/libsdl2 haptic # if not enabled, cemu doesn't detect SDLController
+
+# wxGTK is required by cemu
+x11-libs/wxGTK -spell -tiff
+# spell: Add dictionary support
+# tiff: Add support for the TIFF image format

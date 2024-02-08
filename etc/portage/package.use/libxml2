@@ -1,0 +1,35 @@
+# /etc/portage/package.use/libxml2
+
+# required by:
+# app-accessibility/at-spi2-core-2.50.1
+# app-arch/libarchive-3.7.2 (!expat)
+# app-crypt/gcr-3.41.1-r2 (gtk)
+# app-text/asciidoc-10.2.0
+# app-text/build-docbook-catalog-2.4
+# app-text/libgepub-0.7.1
+# dev-libs/appstream-0.16.4
+# dev-libs/appstream-glib-0.8.2
+# dev-libs/libical-3.0.17 (glib)
+# dev-libs/libxslt-1.1.39
+# dev-python/lxml-4.9.4
+# dev-util/itstool-2.0.7-r1
+# dev-util/ragel-7.0.4-r2
+# gnome-base/librsvg-2.57.0
+# gnome-extra/libgsf-1.14.50-r1
+# media-gfx/imagemagick-7.1.1.25 (xml)
+# media-gfx/sane-airscan-0.99.27
+# media-gfx/sane-backends-1.2.1
+# media-video/ffmpeg-6.0.1-r2 (libxml2)
+# net-libs/nghttp2-1.57.0
+# sci-libs/libqalculate-4.8.1
+# sys-devel/clang-16.0.6 (xml)
+# sys-devel/clang-17.0.6 (xml)
+# sys-devel/gettext-0.22.4
+# sys-devel/llvm-16.0.6 (xml)
+# sys-devel/llvm-17.0.6 (xml)
+# x11-base/xcb-proto-1.16.0
+# x11-libs/libxkbcommon-1.6.0
+# x11-misc/shared-mime-info-2.2
+
+dev-libs/libxml2 -ftp
+# ftp: Add FTP (File Transfer Protocol) support

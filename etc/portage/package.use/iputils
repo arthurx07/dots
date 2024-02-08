@@ -1,0 +1,4 @@
+# /etc/portage/package.use/iputils
+
+net-misc/iputils -arping
+# arping: Build and install arping -- tool for sending ARP requests to peers (see also net-analyzer/arping)

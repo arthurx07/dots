@@ -1,0 +1,15 @@
+# /etc/portage/package.use/texlive
+
+app-text/texlive-core -luajittex -xetex -cjk
+# cjk: Add support for Multi-byte character languages (Chinese, Japanese, Korean)
+# luajittex: Add support for LuaJitTeX: LuaTeX based on LuaJIT which is usually faster.
+# xetex: Add support for XeTeX: a TeX system with Unicode and modern font technologies.
+
+dev-texlive/texlive-basic -luajittex
+# luajittex: Add support for LuaJitTeX: LuaTeX based on LuaJIT which is usually faster.
+
+dev-libs/zziplib -sdl
+# sdl: Add support for Simple Direct Layer (media library)
+
+media-libs/gd heif jpeg png tiff truetype webp zlib
+# zlib: Add support for zlib compression

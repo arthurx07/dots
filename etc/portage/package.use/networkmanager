@@ -1,0 +1,10 @@
+# /etc/portage/package.use/networkmanager
+
+net-misc/networkmanager iwd -lto -modemmanager -bluetooth -wext -ppp
+# iwd: Use net-wireless/iwd instead of net-wireless/wpa_supplicant for wifi support by default
+# -lto: Build using Link Time Optimizations (LTO)
+#   -> Clang does not support -flto-partition. Please use gcc or turn off USE=lto flag when building with clang
+# modemmanager: Enable support for mobile broadband devices using net-misc/modemmanager
+# bluetooth: Enable Bluetooth Support
+# wext: Enable support for the deprecated Wext (Wireless Extensions) API; needed for some older drivers (e.g. ipw2200, ndiswrapper)
+# ppp:Enable support for mobile broadband and PPPoE connections using net-dialup/ppp

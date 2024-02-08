@@ -1,0 +1,9 @@
+# /etc/portage/package.use/yuzu 
+
+games-emulation/yuzu discord -webservice
+# 	discord: enable discord RPC support
+# 	webservice: Enables web services (telemetry, etc.)
+# 	(try to remove qt5 xd)
+
+# required by games-emulation/yuzu
+dev-libs/boost context

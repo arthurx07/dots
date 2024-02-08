@@ -1,0 +1,14 @@
+# package.use
+
+sys-devel/binutils -pgo
+# binutils fails when building with clang and pgo enabled
+
+# clang-16: warning: optimization flag '-ffat-lto-objects' is not supported 
+# [-Wignored-optimization-argument]
+# warning: unknown warning option '-Wshadow=local' [-Wunknown-warning-option]
+# error: Error in reading profile default.profdata: No such file or directory
+
+# profiles/features/llvm/package.use.mask:
+# Sam James <sam@gentoo.org> (2023-07-22)
+# Doesn't call llvm-profdata so fails.
+# sys-devel/binutils pgo

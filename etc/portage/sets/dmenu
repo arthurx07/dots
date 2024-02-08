@@ -1,0 +1,9 @@
+# /etc/portage/sets/dmenu
+
+x11-misc/dmenu-bluetooth # Bluetoothctl interface to dmenu
+# x11-misc/dmenu-networkmanager # Control networkmanager via dmenu
+x11-misc/dmenu-shot # Flameshot interface to dmenu
+x11-misc/dmenu-todo # dmenu interface to add/remove todos in a simple text file
+x11-misc/dmenu-translate # Quick text translation with dmenu
+x11-misc/dmenu-websearch # A browser-independent address bar with bookmark support
+x11-misc/clipmenu # Clipboard management

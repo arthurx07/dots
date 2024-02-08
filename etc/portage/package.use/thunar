@@ -1,0 +1,22 @@
+# /etc/portage/package.use/thunar
+
+xfce-base/thunar introspection -udisks -trash-panel-plugin
+# udisks: Enable storage management support (automounting, volume monitoring, etc)
+# -> using udevil, as doesn't use polkit xd
+# trash-panel-plugin: Build the trash status indicator plugin for the XFCE panel
+# -> not enabling it, as requires too much new dependencies
+# introspection: Add support for GObject based introspection
+# -> decided i'd enable it in every package
+
+xfce-extra/thunar-vcs-plugin git -subversion
+#   git: Enable git (version contol system) support
+#   subversion: Enable subversion (version contol system) support
+
+xfce-base/tumbler epub curl ffmpeg -raw
+
+# gnome-base/gvfs fuse
+# support for trash, remote file systems, etc. [https://docs.xfce.org/xfce/thunar/unix-filesystem#gnome_virtual_file_system]
+
+# required by xfce-base/xfce4-panel[dbusmenu]
+# required by xfce-base/thunar[trash-panel-plugin]
+# dev-libs/libdbusmenu gtk3

@@ -1,0 +1,12 @@
+# /etc/portage/package.use/mpv
+
+media-video/mpv pipewire egl -opengl -alsa -cdda -jpeg -pulseaudio -vulkan -xv
+#   opengl: Enable support for OpenGL-based video backends (Note: deprecated for X11, USE=egl provides the newer support for -gpu-api=opengl) 
+#   egl: Enable support for various EGL-based video outputs / backends 
+#   alsa: Add support for media-libs/alsa-lib (Advanced Linux Sound Architecture)
+#   cdda: Add Compact Disk Digital Audio (Standard Audio CD) support
+#   jpeg: Add JPEG image support
+#   pipewire: Enable sound support via native PipeWire backend
+#   pulseaudio: Add sound server support via media-libs/libpulse (may be PulseAudio or PipeWire)
+#   vulkan: Add support for 3D graphics and computing via the Vulkan cross-platform API
+#   xv: Add in optional support for the Xvideo extension (an X API for video playback)

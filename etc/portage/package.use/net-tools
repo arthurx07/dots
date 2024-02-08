@@ -1,0 +1,5 @@
+# /etc/portage/package.use/net-tools
+
+sys-apps/net-tools -arp -ipv6
+# arp: build the arp and rarp tools (for manipulating the ARP cache)
+# ipv6: Add support for IP version 6

@@ -1,0 +1,8 @@
+# /etc/portage/package.use/tex
+
+# required by dev-texlive/texlive-xetex
+# required by dev-texlive/texlive-formatsextra
+# required by app-text/xmlto[latex]
+# (...)
+# required by app-text/texlive-latex
+app-text/texlive-core xetex

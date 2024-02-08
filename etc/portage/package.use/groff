@@ -1,0 +1,9 @@
+# /etc/portage/package.use/groff
+
+# sys-apps/groff
+# X: Add support for X11
+# examples: Install examples, usually source code
+# uchardet: Enable automatic encoding detection via app-i18n/uchardet
+# -> troff:groff5.ms:6: warning: special character 'u251C' not defined
+# -> error when compiling groff with this flag, and then compiling an ms
+# -> document which needs unicode/utf8.

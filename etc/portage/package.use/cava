@@ -1,0 +1,7 @@
+# /etc/portage/package.use/cava
+
+media-sound/cava -alsa -ncurses -pulseaudio -sdl
+#  alsa       : Add support for media-libs/alsa-lib (Advanced Linux Sound Architecture)
+#  ncurses    : Add ncurses support (console display library)
+#  pulseaudio : Add sound server support via media-libs/libpulse (may be PulseAudio or PipeWire)
+#  sdl        : Add support for Simple Direct Layer (media library)

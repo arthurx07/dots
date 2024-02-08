@@ -1,0 +1,40 @@
+From 740c917789b1a585d91f1d5e5498c3de230984b9 Mon Sep 17 00:00:00 2001
+From: kumao <arturleivarx@gmail.com>
+Date: Fri, 8 Sep 2023 10:55:13 +0200
+Subject: [PATCH] 02-slock-git-20161012-control-clear adapted to my slock
+
+---
+ config.def.h | 4 ++++
+ slock.c      | 5 +++--
+ 2 files changed, 7 insertions(+), 2 deletions(-)
+
+diff --git a/config.def.h b/config.def.h
+index eb88b3d..b8f16eb 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -13,3 +13,6 @@ static const int failonclear = 1;
+ 
+ /* Background image path, should be available to the user above */
+ static const char* background_image = "";
++
++/* allow control key to trigger fail on clear */
++static const int controlkeyclear = 0;
+diff --git a/slock.c b/slock.c
+index 345a279..0cce06a 100644
+--- a/slock.c
++++ b/slock.c
+@@ -184,8 +184,9 @@ readpw(Display *dpy, struct xrandr *rr, struct lock **locks, int nscreens,
+ 					passwd[--len] = '\0';
+ 				break;
+ 			default:
+-				if (num && !iscntrl((int)buf[0]) &&
+-				    (len + num < sizeof(passwd))) {
++                if (controlkeyclear && iscntrl((int)buf[0]))
++                    continue;
++                if (num && (len + num < sizeof(passwd))) {
+ 					memcpy(passwd + len, buf, num);
+ 					len += num;
+ 				}
+-- 
+2.41.0
+

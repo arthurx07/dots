@@ -1,0 +1,6 @@
+# /etc/portage/package.use/imagemagick
+
+media-gfx/imagemagick webp
+#     pango: Enable Pango support using x11-libs/pango (default)
+#     webp: Add support for the WebP image format
+#     xml: Add support for XML files (required by USE svg)

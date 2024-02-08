@@ -1,0 +1,17 @@
+# /etc/portage/sets/top
+
+net-analyzer/iftop # Display bandwidth usage on an interface
+
+sys-process/atop # Resource-specific view of processes
+sys-process/bashtop # Resource monitor that shows usage and stats
+sys-process/bottom # A graphical process/system monitor with a customizable interface
+sys-process/glances # CLI curses based monitoring tool
+sys-process/htop # Interactive process viewer
+sys-process/iotop-c # top utility for IO (C port)
+sys-process/lsof # Lists open files for running Unix processes
+sys-process/nvtop # NVIDIA GPUs htop like monitoring tool
+
+sys-apps/inxi # The CLI inxi collects and prints hardware and system information
+sys-apps/lshw # Hardware Lister
+sys-apps/usbutils # USB enumeration utilities
+sys-fs/ncdu # NCurses Disk Usage

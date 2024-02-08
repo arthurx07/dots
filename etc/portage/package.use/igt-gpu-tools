@@ -1,0 +1,4 @@
+# /etc/portage/package.use/igt-gpu-tools
+
+x11-apps/igt-gpu-tools -xv
+# xv: Enable intel-gpu-overlay xv backend

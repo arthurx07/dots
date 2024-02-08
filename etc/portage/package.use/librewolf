@@ -1,0 +1,23 @@
+# /etc/portage/package.use/librewolf
+### REVIEW
+
+www-client/librewolf lto system-png hwaccel pgo system-python-libs openh264 -gmp-autoupdate -wifi # -> review in the future
+#   lto: Build with Link Time Optimizations (LTO)
+#   system-png: Use system libpng instead of the bundled one.
+#   hwaccel: Force-enable hardware-accelerated rendering (Mozilla bug 594876)
+#   (review) wayland -> also, to enable HARDWARE_VIDEO_DECODING (if not, claims Wayland support missing and is unavailable)
+#   pgo: Add support for profile-guided optimization for faster binaries - this option will double the compile time
+#   wifi: Enable necko-wifi for NetworkManager integration, and access point MAC address scanning for better precision with opt-in geolocation services
+#   BELOW THIS POINT IS TESTING:
+#   system-python-libs: Use system's python site instead of bundled python libraries
+#   openh264: Use media-libs/openh264 for H264 support instead of downloading binary blob from Mozilla at runtime
+#   gmp-autoupdate: Allow Gecko Media Plugins (binary blobs) to be automatically downloaded and kept up-to-date in user profiles
+
+# required by www-client/librewolf[system-libvpx]
+media-libs/libvpx postproc
+
+# required by www-client/librewolf[system-png]
+media-libs/libpng apng
+
+# required by www-client/librewolf::librewolf[pgo,X]
+x11-base/xorg-server xvfb

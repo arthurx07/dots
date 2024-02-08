@@ -1,0 +1,20 @@
+# /etc/portage/package.use/python
+
+*/* PYTHON_TARGETS: python3_11
+*/* PYTHON_SINGLE_TARGET: -* python3_11
+
+dev-lang/python pgo lto -bluetooth
+#   pgo: Optimize the build using Profile Guided Optimization (PGO) by running Python's 
+#        test suite and collecting statistics based on its performance. This will take longer to build.
+#   lto: Optimize the build using Link Time Optimization (LTO)
+#   bluetooth: Build Bluetooth protocol support in socket module
+#   gdbm: Add support for sys-libs/gdbm (GNU database libraries)
+#   ncurses Add ncurses support (console display library)
+#   -> required by: app-portage/elogv, www-client/librewolf, sys-process/glances
+#   sqlite: Add support for sqlite - embedded sql database
+#   -> required by: www-client/librewolf, media-sound/beets
+#   ssl: Add support for SSL/TLS connections (Secure Socket Layer / Transport Layer Security)
+#   -> required by: www-client/librewolf, dev-python/urllib3, sys-apps/portage, dev-python/pip
+
+## packages w/o python3_11 support
+# app-vim/vim-latex python_single_target_python3_10

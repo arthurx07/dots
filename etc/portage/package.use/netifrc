@@ -1,0 +1,5 @@
+# package.use
+
+net-misc/netifrc -dhcp
+# using net-wireless/iwd's default dhcp instead of net-misc/dhcpcd or net-misc/dhcp (it's a laptop)
+# when not using wifi, will add support for sdhcp (in the future)

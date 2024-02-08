@@ -1,0 +1,8 @@
+# /etc/portage/package.use/transmission
+
+net-p2p/transmission -gtk -qt5 -cli
+# not required, using transmission-remote, which includes a web interface if desired:
+# appindicator: Build in support for notifications using the libindicate or libappindicator plugin
+# gtk: Add support for x11-libs/gtk+ (The GIMP Toolkit)
+# qt5: Add support for the Qt 5 application and UI framework
+# cli: Build command-line client

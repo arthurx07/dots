@@ -1,0 +1,19 @@
+# /etc/portage/env/compiler-clang-lto
+
+CC="clang"
+CXX="clang++"
+LD="ld.lld"
+AR="llvm-ar"
+NM="llvm-nm"
+RANLIB="llvm-ranlib"
+STRIP="llvm-strip"
+OBJCOPY="llvm-objcopy"
+OBJDUMP="llvm-objdump"
+
+COMMON_FLAGS="-O3 -pipe -march=native -flto=thin"
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS} -stdlib=libstdc++"
+FCFLAGS="${COMMON_FLAGS}"
+FFLAGS="${COMMON_FLAGS}"
+
+LDFLAGS="-stdlib=libstdc++ -fuse-ld=lld -rtlib=compiler-rt -unwindlib=libunwind -Wl,-O2 -Wl,--as-needed"

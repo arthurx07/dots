@@ -1,0 +1,9 @@
+# /etc/portage/package.use/nvidia-drivers
+
+x11-drivers/nvidia-drivers -tools
+ # tools: Install additional tools such as nvidia-settings and x11-libs/libvdpau
+ 
+ # By default, nvidia-drivers installs vdpau support in /usr/{lib,lib64}/vdpau 
+ #  -> but no program uses it [they use vaapi or nvenc] (ffmpeg, mpv, librewolf, obs...), 
+ #     so will remove vdpau support in make.conf for all packages (-vdpau).
+ #     In contrast, hwaccel is supported with vaapi (intel) and nvdec/nvenc (nvidia)

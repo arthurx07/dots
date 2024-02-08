@@ -1,0 +1,16 @@
+# /etc/portage/package.use/amberol
+
+# required by media-sound/amberol
+gui-libs/gtk wayland
+
+# required by gui-libs/gtk[wayland]
+# required by media-sound/amberol
+media-libs/mesa wayland
+
+# required by media-sound/amberol
+dev-libs/libportal -qt5
+# qt5: Add support for the Qt 5 application and UI framework
+
+# required by media-libs/mesa[wayland]{MULTILIB_USEDEP}
+# required by media-sound/amberol
+### dev-libs/wayland abi_x86_32

@@ -1,0 +1,4 @@
+# /etc/portage/package.use/fcron
+
+sys-process/fcron -mta
+# mta: Enable mta support for sending emails from fcron

@@ -1,0 +1,3 @@
+# /etc/portage/package.use/dwm
+
+x11-wm/dwm -savedconfig # review savedconfig

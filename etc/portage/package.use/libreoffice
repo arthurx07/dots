@@ -1,0 +1,5 @@
+# package.use
+
+app-office/libreoffice pdfimport custom-cflags -bluetooth -branding -googledrive
+	# pdfimport: Enable PDF import via the Poppler library
+	# nlpsolver: build non-linear solver for calc

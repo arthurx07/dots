@@ -1,0 +1,11 @@
+# /etc/portage/package.use/gnupg
+
+app-crypt/gnupg -smartcard -usb
+# smartcard: Build scdaemon software. Enables usage of OpenPGP cards. For other type of smartcards, try app-crypt/gnupg-pkcs11-scd. Bring in dev-libs/libusb as a dependency; enable scdaemon.
+# ssl: Add support for SSL/TLS connections (Secure Socket Layer / Transport Layer Security)
+# usb: Build direct CCID access for scdaemon; requires dev-libs/libusb.
+
+app-crypt/pinentry gtk -ncurses -qt5
+# gtk: Add support for x11-libs/gtk+ (The GIMP Toolkit)
+# ncurses: Add ncurses support (console display library)
+# qt5: Add support for the Qt 5 application and UI framework

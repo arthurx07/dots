@@ -1,0 +1,10 @@
+# /etc/portage/env/compiler-clang-lto-libcxx
+
+source "/etc/portage/env/compiler-clang-lto"
+
+CXXFLAGS="${COMMON_FLAGS} -stdlib=libc++"
+
+LDFLAGS="-stdlib=libc++ -fuse-ld=lld -rtlib=compiler-rt -unwindlib=libunwind -Wl,-O2 -Wl,--as-needed"
+
+# C++ standard library (libstdc++) and libcxx (libc++) are not ABI compatible. IT IS HEAVILY DISCOURAGED to use libc++ worldwide, as gcc compiled
+# programs won't be compatible with clang compiled programs

@@ -1,0 +1,5 @@
+# package.use
+
+app-misc/nnn gitstatus nerdfonts
+# gitstatus: Add git status column to the detail view
+# nerdfonts: Display icons using nerdfonts icons

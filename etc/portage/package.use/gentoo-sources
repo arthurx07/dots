@@ -1,0 +1,20 @@
+# /etc/portage/package.use/gentoo-sources
+
+sys-kernel/gentoo-sources symlink
+# symlink: Force kernel ebuilds to automatically update the /usr/src/linux symlink
+
+virtual/linux-sources firmware
+# firmware: Install linux kernel firmware
+
+sys-kernel/genkernel firmware
+# firmware: Prefer system firmware sys-kernel/linux-firmware over local copy.
+
+# !!REVIEW!!
+sys-kernel/installkernel -dracut
+# dracut: Generate an initrd or UKI on each kernel installation
+# grub: Re-generate grub.cfg on each kernel installation
+# module-rebuild: Rebuild external kernel modules before generating the initramfs
+# uki: Install UKIs to ESP/EFI/Linux for EFI stub booting and/or bootloaders with support for auto-discovering UKIs
+
+sys-apps/debianutils installkernel
+# Install /sbin/installkernel script (for Linux). installkernel is required whenever a kernel will be installed via make install

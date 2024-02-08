@@ -1,0 +1,6 @@
+# package.mask
+
+# Mask gui-libs/gtk-4 versions between gui-libs/gtk.10.4 and gui-libs/gtk-4.11.4, as 
+# they cannot compile with LTO enabled #908078 (and #5672 in gitlab/GNOME/gtk)
+# =gui-libs/gtk-4.10.5
+# (as of 2024/01/19 solved, =gui-libs/gtk-4.12.4 compiled)

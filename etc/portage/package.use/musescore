@@ -1,0 +1,13 @@
+# /etc/portage/package.use/musescore
+
+media-sound/musescore omr -alsa -sf3
+#  omr: Enable PDF import (OMR - optical music recognition)
+#  alsa: Add support for media-libs/alsa-lib (Advanced Linux Sound Architecture)
+#  sf3: Enable SoundFont 3 support using media-libs/libvorbis
+
+dev-qt/qtdeclarative -widgets # -vulkan: won't disable, as then disables -vulkan on qtgui, which is required by yuzu, dolphin, etc.
+# jit          : Enable just-in-time compilation for improved performance. May prevent use of some PaX memory protection features in Gentoo Hardened.
+# localstorage : Build the LocalStorage import for QtQuick (requires QtSql)
+# test         : Enable dependencies and/or preparations necessary to run tests (usually controlled by FEATURES=test but can be toggled independently)
+# vulkan       : Add support for 3D graphics and computing via the Vulkan cross-platform API
+# widgets      : Enable QtWidgets support

@@ -1,0 +1,13 @@
+# /etc/portage/package.use/syncplay
+
+# required by media-video/syncplay::guru[gui,client]
+dev-python/QtPy pyside2
+
+# required by dev-python/QtPy[sql]
+# required by media-video/syncplay::guru
+dev-python/PyQt5 sql
+
+# required by dev-python/PyQt5[multimedia]
+# required by dev-python/QtPy[pyqt5]
+# required by media-video/syncplay::guru[gui,client]
+dev-qt/qtmultimedia widgets

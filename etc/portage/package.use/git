@@ -1,0 +1,5 @@
+# /etc/portage/package.use/git
+
+# dev-vcs/git tk
+ # tk: Include the 'gitk' and 'git gui' tools
+ 	# why would I want this? [28/09/2023]

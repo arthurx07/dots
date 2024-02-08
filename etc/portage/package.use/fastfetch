@@ -1,0 +1,5 @@
+# package.use
+
+app-misc/fastfetch pci ddcutil
+	# pci: for GPU support
+	# ddcutil: ddcutil support (for samsung monitor)

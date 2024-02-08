@@ -1,0 +1,100 @@
+# /etc/portage/package.use/mesa
+
+media-libs/mesa -vaapi -vdpau # I have an intel cpu, mesa won't use them
+#  * Ignoring USE=vaapi      since VIDEO_CARDS does not contain d3d12, r600, radeonsi, or nouveau
+#  * Ignoring USE=vdpau      since VIDEO_CARDS does not contain d3d12, r300, r600, radeonsi, or nouveau
+
+#### DOWN IS WRONG
+# required by virtual/opengl{MULTILIB_USEDEP}
+# required by ... [enabled for compatibility, don't really know which package (or maybe the multilib profile)
+# requires mesa to enable abi_x86_32 (maybe wine, opengl, steam or another system-x-driver-related package
+# which needs 32-bit abi support) - all the abi_x86_32 dependencies mesa enables are because of this use flag]
+##media-libs/mesa abi_x86_32
+
+# required by media-libs/mesa
+##dev-libs/expat abi_x86_32
+
+# required by media-libs/mesa
+##media-libs/libglvnd abi_x86_32
+
+# required by x11-libs/libxcb
+# required by x11-libs/libX11
+# required by media-libs/libglvnd[X]
+# required by media-libs/mesa
+##x11-libs/libXau abi_x86_32
+
+# required by x11-libs/libxcb
+# required by x11-libs/libX11
+# required by media-libs/libglvnd[X]
+# required by media-libs/mesa
+##x11-libs/libXdmcp abi_x86_32
+
+# required by media-libs/mesa
+##x11-libs/libdrm abi_x86_32
+
+# required by x11-libs/libXxf86vm
+# required by media-libs/mesa[X]
+##x11-libs/libX11 abi_x86_32
+
+# required by media-libs/mesa[X]
+##x11-libs/libxshmfence abi_x86_32
+
+# required by media-libs/mesa[X]
+##x11-libs/libXext abi_x86_32
+
+# required by media-libs/mesa[X]
+##x11-libs/libXxf86vm abi_x86_32
+
+# required by media-libs/mesa[X]
+##x11-libs/libxcb abi_x86_32
+
+# required by media-libs/mesa[X]
+##x11-libs/libXfixes abi_x86_32
+
+# required by media-libs/mesa[X]
+##x11-libs/libXrandr abi_x86_32
+
+# required by x11-libs/libXrandr
+# required by media-libs/mesa[X]
+##x11-libs/libXrender abi_x86_32
+
+# required by media-libs/mesa[zstd]
+##app-arch/zstd abi_x86_32
+
+# required by sys-devel/llvm
+# required by media-libs/mesa[llvm]
+##sys-libs/zlib abi_x86_32
+
+# required by media-libs/mesa[llvm]
+##sys-devel/llvm abi_x86_32
+
+# required by sys-devel/llvm[libffi]
+# required by media-libs/mesa[llvm]
+##dev-libs/libffi abi_x86_32
+
+# required by sys-devel/llvm[ncurses]
+# required by media-libs/mesa[llvm]
+##sys-libs/ncurses abi_x86_32
+
+# required by sys-devel/llvm[xml]
+# required by media-libs/mesa[llvm]
+##dev-libs/libxml2 abi_x86_32
+
+# required by dev-libs/libxml2[icu]
+# required by sys-devel/llvm[xml]
+# required by media-libs/mesa[llvm]
+##dev-libs/icu abi_x86_32
+
+# required by sys-libs/ncurses[gpm]
+# required by sys-devel/llvm[ncurses]
+# required by media-libs/mesa[llvm]
+##sys-libs/gpm abi_x86_32
+
+# required by x11-libs/libdrm[video_cards_intel]
+# required by media-libs/mesa
+##x11-libs/libpciaccess abi_x86_32
+
+# required by sys-libs/ncurses[gpm]
+# required by sys-devel/llvm[ncurses]
+# required by media-libs/mesa[llvm]
+##sys-libs/gpm abi_x86_32

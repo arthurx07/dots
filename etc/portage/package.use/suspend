@@ -1,0 +1,13 @@
+# /etc/portage/package.use/suspend
+
+# sys-power/suspend crypt
+#   crypt: allows supspend and resume from encrypted disk
+
+# required by sys-power/suspend[crypt]
+dev-libs/libgcrypt static-libs
+
+# required by sys-power/suspend[crypt]
+dev-libs/libgpg-error static-libs
+
+# required by sys-power/suspend[crypt]
+dev-libs/lzo static-libs

@@ -1,0 +1,16 @@
+# /etc/portage/package.use/gcc
+
+sys-devel/gcc graphite lto -pgo -fortran
+#   grahpite: Add support for the framework for loop optimizations based on a polyhedral intermediate representation
+
+#   lto: Build using Link Time Optimizations (LTO). Note that GCC is always built with support for building
+#   other programs with LTO. This USE flag is for whether GCC itself is built and optimized with LTO.
+
+#   custom-cflags: Build with user-specified CFLAGS -> masked by default
+
+#   pgo: Build GCC using Profile Guided Optimization (PGO). GCC will build itself and then analyze the just-built binary
+#   and then rebuild itself using the data obtained from analysis of codepaths taken. It does not affect whether GCC itself
+#   supports PGO when building other software. This substantially increases the build time needed for building GCC itself.
+	# won't build w/ PGO, as i'm usually using clang to compile other software. (it takes too much time to build +3h)
+
+#   fortran: Add support for fortran

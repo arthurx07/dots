@@ -1,0 +1,17 @@
+# /etc/portage/sets/xorg
+
+# x11-apps/setkxbmap # Controls the keyboard layout of a running X server
+# x11-apps/xdpyinfo # Display information utility for X
+# x11-apps/xev # Print contents of X events
+# x11-apps/xinput # Utility to set XInput device parameters
+# x11-apps/xmodmap # utility for modifying keymaps and pointer button mappings in X
+x11-apps/xprop # property displayer for X
+#(I) x11-apps/xrandr # primitive command line interface to RandR extension
+x11-apps/xset # X.Org xset application
+x11-apps/xrdb # X server resource database utility
+# x11-apps/xsetroot # X.Org xsetroot application
+# x11-apps/xwininfo # window information utility for X
+# x11-misc/read-edid # Program that can get information from a PnP monitor
+# x11-misc/wmctrl # Command line tool to interact with an EWMH/NetWM compatible X Window Manager
+x11-misc/xsel # Command-line program for getting and setting the contents of the X selection
+# x11-misc/xwinwrap # X11 Window in desktop enviroment background

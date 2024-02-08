@@ -1,0 +1,6 @@
+# /etc/portage/package.use/grub
+sys-boot/grub -fonts -themes -truetype
+# fonts: Build and install fonts for the gfxterm module
+# sdl: Add support for Simple Direct Layer (media library)
+# themes: Build and install GRUB themes (starfield)
+# truetype: Build and install grub-mkfont conversion utility

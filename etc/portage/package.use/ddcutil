@@ -1,0 +1,10 @@
+# /etc/portage/package.use/ddcutil 
+
+# app-misc/ddcutil drm user-permissions
+# drm: (Restricted to >=app-misc/ddcutil-0.8.5) Use x11-libs/libdrm for more verbose diagnostics.
+# user-permissions: Adds a udev rules to allow non-root users in the i2c group to access the /dev/i2c-* devices. If usb-monitor is selected, users will need to be added to the video group to access the USB monitor. Otherwise, only root will be able to use ddcutil.
+
+# After changing the monitor panel, as it was broken, ddcutil stopped working
+# After enabling both flags, ddcutil worked great again. Don't touch
+
+# Ok, seems the flags were not the cause. Safe to disable.

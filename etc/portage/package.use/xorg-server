@@ -1,0 +1,6 @@
+# /etc/portage/package.use/xorg-server
+
+x11-base/xorg-server xephyr # xvfb
+#   xephyr: Build the Xephyr server
+#   xvfb: Build the Xvfb server (x virtual framebuffer, run x server w/o showing any screen output)
+#   -> required by: www-client/librewolf[pgo,X]

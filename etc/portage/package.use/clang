@@ -1,0 +1,14 @@
+# /etc/portage/package.use/clang
+
+sys-devel/clang -extra -xml
+# extra: Build extra tools (clangd, clang-tidy and a few more)
+# xml: Add support for XML files
+
+sys-devel/clang-common default-compiler-rt default-lld llvm-libunwind # stricter
+#   -stricter: converts certain warnings to errors, behaves as future clang versions
+sys-devel/clang-runtime -libcxx
+#   -libcxx: use C++ standard library (libstdc++) instead of libcxx (libc++) -> they are not ABI compatible, which breaks many packages
+
+# required by sys-devel/clang-common[llvm-libunwind]
+# required by sys-devel/clang
+sys-libs/llvm-libunwind static-libs

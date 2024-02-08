@@ -1,0 +1,11 @@
+# package.use
+
+net-wireless/iwd standalone -monitor
+  # standalone: Enable standalone mode with built-in DHCP clients and DNS handling
+  # As i'm currently only using iwd to provide network connection, wireless (as i don't use wired, 
+  # don't know if it'd work with iwd).
+  # Removes warning when booting: Service 'netmount' needs non existent service 'net'
+
+  # Check bug #727218 in bugs.gentoo.org.
+  
+  # monitor: Enable iwmon monitor tool

@@ -1,0 +1,4 @@
+# /etc/portage/package.use/nodejs
+
+net-libs/nodejs -npm
+#   npm: Enable NPM package manager

@@ -1,0 +1,800 @@
+# /etc/portage/package.use/wine
+
+# REQUIRED BY VIRTUAL/WINE-0-r10
+# REQUIRED BY APP-EMULATION/WINE-VANILLA-8.0
+
+# required by media-libs/libsdl2[X]
+# required by media-sound/mpg123[sdl]
+# required by media-libs/libsndfile[-minimal]
+# required by media-libs/libpulse
+# required by media-sound/pulseaudio
+# required by media-plugins/gst-plugins-pulse
+# required by media-plugins/gst-plugins-meta[pulseaudio]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##x11-libs/libXcursor abi_x86_32
+
+# required by media-libs/libsdl2[X]
+# required by media-sound/mpg123[sdl]
+# required by media-libs/libsndfile[-minimal]
+# required by media-libs/libpulse
+# required by media-sound/pulseaudio
+# required by media-plugins/gst-plugins-pulse
+# required by media-plugins/gst-plugins-meta[pulseaudio]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##x11-libs/libXfixes abi_x86_32
+
+# required by media-libs/libsdl2[X]
+# required by media-sound/mpg123[sdl]
+# required by media-libs/libsndfile[-minimal]
+# required by media-libs/libpulse
+# required by media-sound/pulseaudio
+# required by media-plugins/gst-plugins-pulse
+# required by media-plugins/gst-plugins-meta[pulseaudio]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##x11-libs/libXi abi_x86_32
+
+# required by media-libs/libsdl2[X]
+# required by media-sound/mpg123[sdl]
+# required by media-libs/libsndfile[-minimal]
+# required by media-libs/libpulse
+# required by media-sound/pulseaudio
+# required by media-plugins/gst-plugins-pulse
+# required by media-plugins/gst-plugins-meta[pulseaudio]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##x11-libs/libXrandr abi_x86_32
+
+# required by x11-libs/libXrandr
+# required by media-libs/libsdl2[X]
+# required by media-sound/mpg123[sdl]
+# required by media-libs/libsndfile[-minimal]
+# required by media-libs/libpulse
+# required by media-sound/pulseaudio
+# required by media-plugins/gst-plugins-pulse
+# required by media-plugins/gst-plugins-meta[pulseaudio]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##x11-libs/libXrender abi_x86_32
+
+# required by media-libs/mesa[X]
+# required by virtual/opengl
+# required by media-libs/libva[X]
+# required by media-plugins/gst-plugins-vaapi
+# required by media-plugins/gst-plugins-meta[vaapi]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##x11-libs/libXxf86vm abi_x86_32
+
+# required by media-libs/mesa
+# required by virtual/opengl
+# required by media-libs/libva[X]
+# required by media-plugins/gst-plugins-vaapi
+# required by media-plugins/gst-plugins-meta[vaapi]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/libglvnd abi_x86_32
+
+# required by media-libs/mesa
+# required by virtual/opengl
+# required by media-libs/libva[X]
+# required by media-plugins/gst-plugins-vaapi
+# required by media-plugins/gst-plugins-meta[vaapi]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##x11-libs/libXcomposite abi_x86_32
+
+# required by app-emulation/wine-vanilla[X,xinerama]
+# required by virtual/wine
+##x11-libs/libXinerama abi_x86_32
+
+# required by app-emulation/wine-vanilla[cups]
+# required by virtual/wine
+##net-print/cups abi_x86_32
+
+# required by x11-libs/pango
+# required by media-libs/gst-plugins-base[pango]
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/fontconfig abi_x86_32
+
+# required by app-emulation/wine-vanilla[sdl]
+# required by virtual/wine
+##media-libs/libsdl2 abi_x86_32
+
+# required by net-print/cups[-openssl,ssl]
+# required by app-emulation/wine-vanilla[cups]
+# required by virtual/wine
+##net-libs/gnutls abi_x86_32
+
+# required by x11-libs/pango
+# required by media-libs/gst-plugins-base[pango]
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/freetype abi_x86_32
+
+# required by media-libs/libsdl2[dbus]
+# required by media-sound/mpg123[sdl]
+# required by media-libs/libsndfile[-minimal]
+# required by media-libs/libpulse
+# required by media-sound/pulseaudio
+# required by media-plugins/gst-plugins-pulse
+# required by media-plugins/gst-plugins-meta[pulseaudio]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##sys-apps/dbus abi_x86_32
+
+# required by app-emulation/wine-vanilla[vulkan]
+# required by virtual/wine
+##media-libs/vulkan-loader abi_x86_32
+
+# required by media-plugins/gst-plugins-vaapi[X]
+# required by media-plugins/gst-plugins-meta[vaapi]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##x11-libs/libX11 abi_x86_32
+
+# required by x11-libs/libXft
+# required by x11-libs/pango[X]
+# required by media-libs/gst-plugins-base[pango]
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+#x11-libs/libXext abi_x86_32
+
+# required by media[pipewire-alsa]
+# required by media-plugins/gst-plugins-jack
+# required by media-plugins/gst-plugins-meta[jack]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/alsa-lib abi_x86_32
+
+# required by media-plugins/gst-plugins-opus
+# required by media-plugins/gst-plugins-meta[opus]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##dev-libs/glib abi_x86_32
+
+# required by media-plugins/gst-plugins-vaapi
+# required by media-plugins/gst-plugins-meta[vaapi]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/gst-plugins-base abi_x86_32
+
+# required by media-plugins/gst-plugins-faad
+# required by media-plugins/gst-plugins-meta[aac]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/gstreamer abi_x86_32
+
+# required by media-sound/pulseaudio
+# required by media-libs/libsdl2[pulseaudio]
+# required by media-sound/mpg123[sdl]
+# required by media-libs/libsndfile[-minimal]
+# required by media-sound/musescore
+# required by @selected
+# required by @world (argument)
+##media-libs/libpulse abi_x86_32
+
+# required by app-emulation/wine-vanilla[usb]
+# required by virtual/wine
+##dev-libs/libusb abi_x86_32
+
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-plugins/gst-plugins-meta abi_x86_32
+
+# required by media-plugins/gst-plugins-pulse
+# required by media-plugins/gst-plugins-meta[pulseaudio]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/gst-plugins-good abi_x86_32
+
+# required by media-plugins/gst-plugins-meta[-dvd,a52]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-plugins/gst-plugins-a52dec abi_x86_32
+
+# required by media-plugins/gst-plugins-meta[aac]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-plugins/gst-plugins-faad abi_x86_32
+
+# required by media-plugins/gst-plugins-meta[dts]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-plugins/gst-plugins-dts abi_x86_32
+
+# required by media-plugins/gst-plugins-meta[flac]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-plugins/gst-plugins-flac abi_x86_32
+
+# required by media-plugins/gst-plugins-meta[jack]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-plugins/gst-plugins-jack abi_x86_32
+
+# required by media-plugins/gst-plugins-meta[mp3,-dvd]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/gst-plugins-ugly abi_x86_32
+
+# required by media-plugins/gst-plugins-meta[mp3]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-plugins/gst-plugins-mpg123 abi_x86_32
+
+# required by media-plugins/gst-plugins-meta[mpeg,-dvd,-vcd]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-plugins/gst-plugins-mpeg2dec abi_x86_32
+
+# required by media-plugins/gst-plugins-meta[opus]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-plugins/gst-plugins-opus abi_x86_32
+
+# required by media-plugins/gst-plugins-meta[pulseaudio]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-plugins/gst-plugins-pulse abi_x86_32
+
+# required by media-plugins/gst-plugins-meta[vaapi]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-plugins/gst-plugins-vaapi abi_x86_32
+
+# required by media-plugins/gst-plugins-meta[x264]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-plugins/gst-plugins-x264 abi_x86_32
+
+# required by media-plugins/gst-plugins-x264
+# required by media-plugins/gst-plugins-meta[x264]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/x264 abi_x86_32
+
+# ld.lld: error: relocation R_386_32 cannot be used against symbol ''; recompile with -fPIC
+# [caused by abi_x86_32]
+# --> pic: disable optimized assembly code that is not PIC friendly
+##media-libs/x264 pic
+
+# required by media-plugins/gst-plugins-faad
+# required by media-plugins/gst-plugins-meta[aac]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/gst-plugins-bad abi_x86_32
+
+# required by media-plugins/gst-plugins-vaapi
+# required by media-plugins/gst-plugins-meta[vaapi]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/libva abi_x86_32
+
+# required by media-libs/mesa
+# required by virtual/opengl
+# required by media-libs/libva[X]
+# required by media-plugins/gst-plugins-vaapi
+# required by media-plugins/gst-plugins-meta[vaapi]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##x11-libs/libdrm abi_x86_32
+
+# required by virtual/opengl
+# required by media-libs/libva[X]
+# required by media-plugins/gst-plugins-vaapi
+# required by media-plugins/gst-plugins-meta[vaapi]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/mesa abi_x86_32
+
+# required by media-libs/mesa
+# required by virtual/opengl
+# required by media-libs/libva[X]
+# required by media-plugins/gst-plugins-vaapi
+# required by media-plugins/gst-plugins-meta[vaapi]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##dev-libs/expat abi_x86_32
+
+# required by sys-devel/llvm
+# required by media-libs/mesa[-video_cards_radeonsi,-video_cards_r600,llvm,-opencl,-video_cards_radeon]
+# required by virtual/opengl
+# required by media-libs/libva[X]
+# required by media-plugins/gst-plugins-vaapi
+# required by media-plugins/gst-plugins-meta[vaapi]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##sys-libs/zlib abi_x86_32
+
+# required by media-libs/mesa[wayland]
+# required by virtual/opengl
+# required by media-libs/libva[X]
+# required by media-plugins/gst-plugins-vaapi
+# required by media-plugins/gst-plugins-meta[vaapi]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##dev-libs/wayland abi_x86_32
+
+# required by media-libs/mesa[X]
+# required by virtual/opengl
+# required by media-libs/libva[X]
+# required by media-plugins/gst-plugins-vaapi
+# required by media-plugins/gst-plugins-meta[vaapi]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##x11-libs/libxshmfence abi_x86_32
+
+# required by media-libs/mesa[X]
+# required by virtual/opengl
+# required by media-libs/libva[X]
+# required by media-plugins/gst-plugins-vaapi
+# required by media-plugins/gst-plugins-meta[vaapi]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##x11-libs/libxcb abi_x86_32
+
+# required by media-libs/mesa[zstd]
+# required by virtual/opengl
+# required by media-libs/libva[X]
+# required by media-plugins/gst-plugins-vaapi
+# required by media-plugins/gst-plugins-meta[vaapi]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##app-arch/zstd abi_x86_32
+
+# required by media-libs/mesa[-video_cards_radeonsi,-video_cards_r600,llvm,-opencl,-video_cards_radeon]
+# required by virtual/opengl
+# required by media-libs/libva[X]
+# required by media-plugins/gst-plugins-vaapi
+# required by media-plugins/gst-plugins-meta[vaapi]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##sys-devel/llvm abi_x86_32
+
+# required by sys-devel/llvm[libffi]
+# required by media-libs/mesa[-video_cards_radeonsi,-video_cards_r600,llvm,-opencl,-video_cards_radeon]
+# required by virtual/opengl
+# required by media-libs/libva[X]
+# required by media-plugins/gst-plugins-vaapi
+# required by media-plugins/gst-plugins-meta[vaapi]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##dev-libs/libffi abi_x86_32
+
+# required by sys-devel/llvm[ncurses]
+# required by media-libs/mesa[llvm]
+# required by virtual/opengl
+# required by media-libs/libva[X]
+# required by media-plugins/gst-plugins-vaapi
+# required by media-plugins/gst-plugins-meta[vaapi]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##sys-libs/ncurses abi_x86_32
+
+# required by sys-devel/llvm[xml]
+# required by media-libs/mesa[-video_cards_radeonsi,-video_cards_r600,llvm,-opencl,-video_cards_radeon]
+# required by virtual/opengl
+# required by media-libs/libva[X]
+# required by media-plugins/gst-plugins-vaapi
+# required by media-plugins/gst-plugins-meta[vaapi]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##dev-libs/libxml2 abi_x86_32
+
+# required by media-libs/harfbuzz[icu]
+# required by x11-libs/pango
+# required by media-libs/gst-plugins-base[pango]
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##dev-libs/icu abi_x86_32
+
+# required by sys-libs/ncurses[gpm]
+# required by sys-devel/llvm[ncurses]
+# required by media-libs/mesa[-video_cards_radeonsi,-video_cards_r600,llvm,-opencl,-video_cards_radeon]
+# required by virtual/opengl
+# required by media-libs/libva[X]
+# required by media-plugins/gst-plugins-vaapi
+# required by media-plugins/gst-plugins-meta[vaapi]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##sys-libs/gpm abi_x86_32
+
+# required by x11-libs/libxcb
+# required by x11-libs/libX11
+# required by x11-libs/libXcursor
+# required by media-libs/libsdl2[X]
+# required by media-sound/mpg123[sdl]
+# required by media-libs/libsndfile[-minimal]
+# required by media-libs/libpulse
+# required by media-sound/pulseaudio
+# required by media-plugins/gst-plugins-pulse
+# required by media-plugins/gst-plugins-meta[pulseaudio]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##x11-libs/libXau abi_x86_32
+
+# required by x11-libs/libxcb
+# required by x11-libs/libX11
+# required by x11-libs/libXcursor
+# required by media-libs/libsdl2[X]
+# required by media-sound/mpg123[sdl]
+# required by media-libs/libsndfile[-minimal]
+# required by media-libs/libpulse
+# required by media-sound/pulseaudio
+# required by media-plugins/gst-plugins-pulse
+# required by media-plugins/gst-plugins-meta[pulseaudio]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##x11-libs/libXdmcp abi_x86_32
+
+# required by x11-libs/libdrm[video_cards_intel]
+# required by media-libs/libva
+# required by media-plugins/gst-plugins-vaapi
+# required by media-plugins/gst-plugins-meta[vaapi]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##x11-libs/libpciaccess abi_x86_32
+
+# required by media-libs/gst-plugins-bad[bzip2]
+# required by media-plugins/gst-plugins-faad
+# required by media-plugins/gst-plugins-meta[aac]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##app-arch/bzip2 abi_x86_32
+
+# required by media-libs/gst-plugins-base[orc]
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##dev-lang/orc abi_x86_32
+
+# required by media-plugins/gst-plugins-pulse
+# required by media-plugins/gst-plugins-meta[pulseaudio]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-sound/pulseaudio abi_x86_32
+
+# required by media-plugins/gst-plugins-opus
+# required by media-plugins/gst-plugins-meta[opus]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/opus abi_x86_32
+
+# required by media-plugins/gst-plugins-mpeg2dec
+# required by media-plugins/gst-plugins-meta[mpeg,-dvd,-vcd]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/libmpeg2 abi_x86_32
+
+# required by media-plugins/gst-plugins-mpg123
+# required by media-plugins/gst-plugins-meta[mp3]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-sound/mpg123 abi_x86_32
+
+# required by media-plugins/gst-plugins-flac
+# required by media-plugins/gst-plugins-meta[flac]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/flac abi_x86_32
+
+# required by media-libs/gst-plugins-base[ogg]
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/libogg abi_x86_32
+
+# required by media-plugins/gst-plugins-dts
+# required by media-plugins/gst-plugins-meta[dts]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/libdca abi_x86_32
+
+# required by media-plugins/gst-plugins-faad
+# required by media-plugins/gst-plugins-meta[aac]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/faad2 abi_x86_32
+
+# required by media-plugins/gst-plugins-a52dec
+# required by media-plugins/gst-plugins-meta[-dvd,a52]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/a52dec abi_x86_32
+
+# required by media-libs/libpulse
+# required by media-sound/pulseaudio
+# required by media-libs/libsdl2[pulseaudio]
+# required by media-sound/mpg123[sdl]
+# required by media-plugins/gst-plugins-mpg123
+# required by media-plugins/gst-plugins-meta[mp3]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/libsndfile abi_x86_32
+
+# required by media-libs/libpulse[asyncns]
+# required by media-sound/pulseaudio
+# required by media-libs/libsdl2[pulseaudio]
+# required by media-sound/mpg123[sdl]
+# required by media-libs/libsndfile[-minimal]
+# required by media-sound/musescore
+# required by @selected
+# required by @world (argument)
+##net-libs/libasyncns abi_x86_32
+
+# required by media-libs/gst-plugins-base[vorbis]
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/libvorbis abi_x86_32
+
+# required by media-libs/libsndfile[-minimal]
+# required by media-libs/libpulse
+# required by media-sound/pulseaudio
+# required by media-libs/libsdl2[pulseaudio]
+# required by media-sound/mpg123[sdl]
+# required by media-plugins/gst-plugins-mpg123
+# required by media-plugins/gst-plugins-meta[mp3]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-sound/lame abi_x86_32
+
+# required by sys-apps/systemd-utils[udev]
+# required by virtual/libudev[-systemd]
+# required by app-emulation/wine-vanilla[udev]
+# required by virtual/wine
+##sys-libs/libcap abi_x86_32
+
+# required by sys-libs/libcap[pam]
+# required by sys-apps/systemd-utils[udev]
+# required by virtual/libudev[-systemd]
+# required by app-emulation/wine-vanilla[udev]
+# required by virtual/wine
+##sys-libs/pam abi_x86_32
+
+# required by media-libs/gst-plugins-base[pango]
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##x11-libs/pango abi_x86_32
+
+# required by media-libs/gst-plugins-base[X]
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##x11-libs/libXv abi_x86_32
+
+# required by media-libs/gst-plugins-base[opengl,-gles2]
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/graphene abi_x86_32
+
+# required by media-libs/freetype[png]
+# required by media-libs/fontconfig
+# required by x11-libs/cairo
+# required by x11-libs/pango
+# required by media-libs/gst-plugins-base[pango]
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/libpng abi_x86_32
+
+# required by media-libs/gst-plugins-base[opengl,-gles2]
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/libjpeg-turbo abi_x86_32
+
+# required by x11-libs/pango
+# required by media-libs/gst-plugins-base[pango]
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##dev-libs/fribidi abi_x86_32
+
+# required by x11-libs/pango
+# required by media-libs/gst-plugins-base[pango]
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/harfbuzz abi_x86_32
+
+# required by x11-libs/pango
+# required by media-libs/gst-plugins-base[pango]
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##x11-libs/cairo abi_x86_32
+
+# required by x11-libs/pango[X]
+# required by media-libs/gst-plugins-base[pango]
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##x11-libs/libXft abi_x86_32
+
+# required by x11-libs/cairo
+# required by x11-libs/pango
+# required by media-libs/gst-plugins-base[pango]
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##dev-libs/lzo abi_x86_32
+
+# required by x11-libs/cairo
+# required by x11-libs/pango
+# required by media-libs/gst-plugins-base[pango]
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##x11-libs/pixman abi_x86_32
+
+# required by media-libs/harfbuzz[graphite]
+# required by x11-libs/pango
+# required by media-libs/gst-plugins-base[pango]
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-gfx/graphite2 abi_x86_32
+
+# required by dev-libs/glib
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##dev-libs/libpcre2 abi_x86_32
+
+# required by sys-apps/systemd-utils[udev]
+# required by virtual/libudev[-systemd]
+# required by app-emulation/wine-vanilla[udev]
+# required by virtual/wine
+##sys-apps/util-linux abi_x86_32
+
+# required by net-libs/gnutls
+# required by net-print/cups[-openssl,ssl]
+# required by app-emulation/wine-vanilla[cups]
+# required by virtual/wine
+##dev-libs/libtasn1 abi_x86_32
+
+# required by net-libs/gnutls
+# required by net-print/cups[-openssl,ssl]
+# required by app-emulation/wine-vanilla[cups]
+# required by virtual/wine
+##dev-libs/libunistring abi_x86_32
+
+# required by net-libs/gnutls
+# required by net-print/cups[-openssl,ssl]
+# required by app-emulation/wine-vanilla[cups]
+# required by virtual/wine
+##dev-libs/nettle abi_x86_32
+
+# required by dev-libs/nettle[gmp]
+# required by net-libs/gnutls
+# required by net-print/cups[-openssl,ssl]
+# required by app-emulation/wine-vanilla[cups]
+# required by virtual/wine
+##dev-libs/gmp abi_x86_32
+
+# required by net-libs/gnutls[idn]
+# required by net-print/cups[-openssl,ssl]
+# required by app-emulation/wine-vanilla[cups]
+# required by virtual/wine
+##net-dns/libidn2 abi_x86_32
+
+# required by virtual/jack
+# required by media-sound/mpg123
+# required by media-libs/libsndfile[-minimal]
+# required by media-libs/libpulse
+# required by media-sound/pulseaudio
+# required by media-libs/libsdl2[pulseaudio]
+# required by app-emulation/wine-vanilla[sdl]
+# required by virtual/wine
+##media-video/pipewire abi_x86_32
+
+# required by dev-libs/glib
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##virtual/libintl abi_x86_32
+
+# required by dev-libs/libusb[udev]
+# required by app-emulation/wine-vanilla[usb]
+# required by virtual/wine
+##virtual/libudev abi_x86_32
+
+# required by virtual/libudev[-systemd]
+# required by app-emulation/wine-vanilla[udev]
+# required by virtual/wine
+##sys-apps/systemd-utils abi_x86_32
+
+# required by dev-libs/glib
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##virtual/libiconv abi_x86_32
+
+# required by media-libs/libsdl2[jack]
+# required by media-sound/mpg123[sdl]
+# required by media-libs/libsndfile[-minimal]
+# required by media-libs/libpulse
+# required by media-sound/pulseaudio
+# required by media-plugins/gst-plugins-pulse
+# required by media-plugins/gst-plugins-meta[pulseaudio]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##virtual/jack abi_x86_32
+
+# required by media-libs/libsdl2[opengl]
+# required by media-sound/mpg123[sdl]
+# required by media-libs/libsndfile[-minimal]
+# required by media-libs/libpulse
+# required by media-sound/pulseaudio
+# required by media-plugins/gst-plugins-pulse
+# required by media-plugins/gst-plugins-meta[pulseaudio]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##virtual/opengl abi_x86_32
+
+# required by media-libs/libsdl2[opengl]
+# required by media-sound/mpg123[sdl]
+# required by media-libs/libsndfile[-minimal]
+# required by media-libs/libpulse
+# required by media-sound/pulseaudio
+# required by media-plugins/gst-plugins-pulse
+# required by media-plugins/gst-plugins-meta[pulseaudio]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##virtual/glu abi_x86_32
+
+# required by virtual/glu
+# required by media-libs/libsdl2[opengl]
+# required by media-sound/mpg123[sdl]
+# required by media-libs/libsndfile[-minimal]
+# required by media-libs/libpulse
+# required by media-sound/pulseaudio
+# required by media-plugins/gst-plugins-pulse
+# required by media-plugins/gst-plugins-meta[pulseaudio]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-libs/glu abi_x86_32
+
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-plugins/gst-plugins-cdparanoia abi_x86_32
+
+# required by media-plugins/gst-plugins-cdparanoia
+# required by media-plugins/gst-plugins-meta[cdda]
+# required by app-emulation/wine-vanilla[gstreamer]
+# required by virtual/wine
+##media-sound/cdparanoia abi_x86_32
