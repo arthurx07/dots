@@ -1,6 +1,7 @@
 ! settings for dwm, do not change [dpi and cursor are necessary]
 Xcursor.theme: Bibata-Modern-Ice
-Xft.dpi:       96
+Xft.dpi:       101
+! lenovo legion: (1920x1080; 15.6" -> 141ppi) / samsung g5 (2560x1440; 27" -> 109ppi)
 ! font settings [taken from a post on linuxquestions.org 2022]
 Xft.antialias: 1
 Xft.hinting:   1
