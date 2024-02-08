@@ -1,59 +1,77 @@
 vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20" -- default
 
--- line numbers
+-- Line numbers
 vim.opt.relativenumber = true
 vim.opt.number = true
 
--- tabs & indentation
+-- Tabs & indentation
 -- vim.opt.tabstop = 2 -- 2 spaces for tabs
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2 -- 2 spaces for indent width
 vim.opt.expandtab = true -- convert tabs to spaces
 vim.opt.smartindent = true -- see cindent, autoindent
 vim.opt.filetype.indent = true
--- vim.opt.shiftround
+-- vim.opt.shiftround = true
 
--- line wrapping
+-- Line wrapping
 vim.opt.wrap = false -- don't wrap text when line is longer than display
 
--- search settings
+-- Search settings
 vim.opt.incsearch = true      -- highlight where the pattern first matches
 vim.opt.hlsearch = false      -- highlight all search matched patterns
--- case-insensitive searching unless \C or capital in search
+-- Case-insensitive searching unless \C or capital in search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
--- appearance
+-- Appearance
 vim.opt.termguicolors = true  -- colorscheme working properly
 vim.opt.signcolumn = 'yes' -- signcolumn display settings [signs (error, etc.) in the left column]
-vim.opt.colorcolumn = '' -- 80
+vim.opt.colorcolumn = '' -- 80, 221
 
--- backspace
--- vim.opt.backspace = "indent,eol,start" -- [!] review
+-- Backspace (don't really understand it)
+vim.opt.backspace = "indent,eol,start" -- Influences the working of <BS>, <Del>, CTRL-W and CTRL-U in Insert mode.
+-- indent: allow backspacing over autoindent
+-- eol: allow backspacing over line breaks (join lines)
+-- start: allow backspacing over the start of insert; CTRL-W and CTRL-U stop once at the start of insert.
+-- nostop: like start, except CTRL-W and CTRL-U do not stop at the start of insert
 
--- clipboard
+-- Clipboard
 -- vim.opt.clipboard:append('unnamedplus') -- using asbjornHaland
 
--- split windows
+-- Split windows
 vim.opt.splitright =  true
 vim.opt.splitbelow = true
 
--- misc
+-- Misc
 vim.opt.iskeyword:append("-") -- consider dash part of the word when "dw"
 vim.opt.scrolloff = 8         -- never less than 8 lines below and above cursor
-vim.opt.isfname:append("@-@") -- [?]
+vim.opt.isfname:append("@-@") -- The characters specified by this option are included in file names and path names.
+-- In theory it's for nvim to not fail with files with @ in its filename, but I haven't really seen a difference. 
 vim.opt.updatetime = 50       -- faster update time
--- vim.opt.colorcolumn = "221" -- [!] review
 vim.opt.mouse = 'a' -- enable mouse always
-vim.opt.completeopt = 'menuone,noselect' -- [!] completeopt to have a better completion experience
-vim.opt.runtimepath = vim.opt.runtimepath + '/usr/share/vim/vimfiles'
--- vim.o.showtabline = 2 -- always show tabline
--- vim.opt.rtp:append('/usr/share/vim/vimfiles') -- enable gentoo-syntax, vim plugins enabled in nvim
+vim.opt.completeopt = 'menuone,noselect,preview,noinsert' -- completeopt to have a better completion experience [testing, maybe remove preview,noinsert]
 vim.opt.cursorline = true
+vim.opt.autochdir = true -- change current working dir whenever openin file, switching buffers, deleting buffers or open/close a window
+-- vim.o.showtabline = 2 -- always show tabline
+-- vim.opt.runtimepath = vim.opt.runtimepath + '/usr/share/vim/vimfiles' (not needed, installed gentoo-syntax with lazy.nvim) 
+-- vim.opt.rtp:append('/usr/share/vim/vimfiles') -- enable gentoo-syntax, vim plugins enabled in nvim
 
--- UNDOTREE[?]: disable swap+backup, but enable undodir/undofile 
--- to be able to undo things from days ago
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.config/nvim/undodir" -- .vim/undodir/ {?}
-vim.opt.undofile = true
+-- instead of saving file history/undos only for the period of a session save undo history
+-- on disk and make it persistent, to be able to undo things from other previous sessions.
+-- great options for using with undotree, which provides a visual way to get back and forth to 
+-- older/newer file versions.
+vim.opt.swapfile = false -- use a swapfile for the buffer, will be deleted when closing it
+vim.opt.backup = false -- make a backup before overwriting a file
+vim.opt.undodir = os.getenv("HOME") .. "/.config/nvim/undodir" -- set undodir dir
+vim.opt.undofile = true -- save undo history to this file
+
+-- Read .ms files as groff automatically
+vim.api.nvim_create_autocmd(
+  { "BufRead", "BufNewFile" },
+  { pattern = "*.ms,*.me,*.mom,*.man", command = "set filetype=groff" }
+)
+
+-- TODO: save file as sudo if required
+-- TODO: automatically delete all trailing whitespaces and newlines at
+-- end of file on save
+-- (see lukesmith's init.vim)
