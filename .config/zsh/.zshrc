@@ -1,4 +1,5 @@
 # ~/.config/zsh/.zshrc
+### Testing speed: zmodload zsh/zprof
 ### General options
 setopt autocd # Automatically cd into typed directory.
 setopt interactive_comments # Enable comments in prompt
@@ -84,3 +85,5 @@ autopair-init
 # Load syntax highlighting; should be last. adds 10ms
 [ -f /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh ] && source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh 2>/dev/null # see fast-zsh-syntax-highlighting
 ZSH_HIGHLIGHT_HIGHLIGHTERS+=brackets # recommended by zsh-autopair
+### Testing speed: zprof
+### Testing speed: for i in $(seq 1 10); do time $SHELL -i -c exit; done
