@@ -10,14 +10,17 @@ alias tree='tree -a -I .git' # print all files except .git dir
 alias config='/usr/bin/git --git-dir=/home/tur/src/dots --work-tree=/home/tur' # git config for dots
 alias tsm='transmission-remote'
 alias p1++='g++ -ansi -O2 -DNDEBUG -D_GLIBCXX_DEBUG -Wall -Wextra -Werror -Wno-sign-compare -Wshadow'
+alias p2++='g++ -D_GLIBCXX_DEBUG -O2 -Wall -Wextra -Werror -Wno-sign-compare -std=c++11 -fno-extended-identifiers' # /usr/bin/g++-10
+alias cdp2='cd /home/tur/src/studies/gei/Q2/Programació\ 2/PRO2'
 alias :q=exit
+alias mn='f() { lowdown -tterm $1 | less -R };f' # pretty markdown in terminal
 
 ## Memory/Process management
 alias df='df -h'
 alias free='free -h'
 alias psmem='ps auxf | sort -nr -k 4 | head -5' # get top process eating memory
 alias pscpu='ps auxf | sort -nr -k 3 | head -5' # get top process eating cpu ##
-# alias clean-ram="${PRIV} sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
+alias clean-ram="doas sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'"
 
 ## Navigation
 alias .1="cd .."
@@ -27,6 +30,8 @@ alias mkdir='mkdir -pv'
 alias la='ls -A'
 alias lh='ls -lh'
 alias lah='ls -lAh'
+alias nn='nnn'
+alias n3='nnn'
 
 # Prevent errors (can ignore aliases with '')
 alias cp='cp -i'
@@ -44,4 +49,4 @@ alias -g C='| tr -d ''\n'' | xclip -selection clipboard'
 
 ## fun :)
 # show top-run programs
-alias history-stat='history 0 | awk ''{print $2}'' | sort | uniq -c | sort -n -r | head'
+# alias history-stat='history 0 | awk '{print $2}' | sort | uniq -c | sort -n -r | head'

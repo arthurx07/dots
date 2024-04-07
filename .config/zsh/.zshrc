@@ -1,4 +1,5 @@
 # ~/.config/zsh/.zshrc
+### Testing speed: zmodload zsh/zprof
 ### General options
 setopt autocd # Automatically cd into typed directory.
 setopt interactive_comments # Enable comments in prompt
@@ -22,7 +23,23 @@ setopt hist_expire_dups_first # will start removing repeating commands when limi
 ### Prompt
 autoload -U promptinit
 promptinit
-prompt gentoo # set prompt to gentoo's default adds +5ms of latency
+
+# prompt gentoo # set prompt to gentoo's default adds +5ms of latency
+local prompt_gentoo_prompt=${1:-'blue'}
+local prompt_gentoo_user=${2:-'green'}
+local prompt_gentoo_root=${3:-'red'}
+
+# local base_prompt="%B%F{$prompt_gentoo_user}%n@%m%k "
+local base_prompt="%B%F{$prompt_gentoo_user}%k "
+local post_prompt="%b%f%k"
+
+#setopt noxtrace localoptions
+
+local path_prompt="%B%F{$prompt_gentoo_prompt}%1~"
+typeset -g PS1="$base_prompt$path_prompt %# $post_prompt"
+typeset -g PS2="$base_prompt$path_prompt %_> $post_prompt"
+typeset -g PS3="$base_prompt$path_prompt ?# $post_prompt"
+
 #[?] autoload -U colors && colors # Load colors
 
 ## Load version control information
@@ -84,3 +101,5 @@ autopair-init
 # Load syntax highlighting; should be last. adds 10ms
 [ -f /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh ] && source /usr/share/zsh/site-functions/zsh-syntax-highlighting.zsh 2>/dev/null # see fast-zsh-syntax-highlighting
 ZSH_HIGHLIGHT_HIGHLIGHTERS+=brackets # recommended by zsh-autopair
+### Testing speed: zprof
+### Testing speed: for i in $(seq 1 10); do time $SHELL -i -c exit; done
