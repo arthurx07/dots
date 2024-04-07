@@ -1,0 +1,19 @@
+# zathurarc
+
+# don't really know the change: 
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set page-padding 1
+
+map y set page-right-to-left 0
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+map r reload
+map R rotate
+map <C-k> zoom in
+map <C-j> zoom out
+map i recolor # dark mode
+map p print
+
+# note: marks are broken (because of ')
