@@ -1,19 +1,15 @@
-#!/bin/sh
+#!/bin/env sh
 
-# Environment variables set everywhere
-export EDITOR="nvim"
-export READER="zathura"
-export VISUAL="nvim"
-export TERMINAL="st"
-export BROWSER="librewolf"
-export VIDEO="mpv"
-export COLORTERM="truecolor"
-export OPENER="xdg-open"
-export PAGER="less"
-export WM="dwm"
-export PATH=$PATH:"$HOME/.local/bin"
+## Environment variables set everywhere
+# XSESSION is set in /etc/env.d/90xsession
+# /etc/env.d /etc/environment.d/10-gentoo-env.conf
 
-# XDG Paths
+export PATH=${PATH}:"${HOME}/.local/bin"
+
+## ZSH
+export ZDOTDIR=$HOME/.config/zsh
+
+## XDG paths
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
@@ -23,48 +19,23 @@ export XDG_MUSIC_DIR=$HOME/mus
 export XDG_PICTURES_DIR=$HOME/img
 export XDG_DESKTOP_DIR=$HOME
 
-# zsh config dir
-export ZDOTDIR=$HOME/.config/zsh
-# For QT Themes
+## Default programs
+export EDITOR="nvim"
+# export VISUAL="nuke"
+export VISUAL="nvim"
+export READER="zathura"
+export TERMINAL="st-256color"
+export TERM="st-256color"
+export BROWSER="librewolf"
+export VIDEO="mpv"
+export COLORTERM="truecolor"
+export OPENER="xdg-open"
+export PAGER="less" # nvim (only for man)
+export WM="dwm"
+
+## QT themes
 export QT_QPA_PLATFORMTHEME=kvantum
-export QT_FONT_DPI=96 # font was way too big in musescore
+export QT_FONT_DPI=101 # font was way too big in musescore
 
-# nnn
-# export NNN_USE_EDITOR=1
-
-# Multi-head w/ xrandr
-$HOME/.local/bin/kxrandr # xrandr --auto && $HOME/.local/bin/kxrandr &
-
-# wallpaper and colorscheme
-$HOME/.local/bin/kwal -r
-
-# compositor
-picom -b &
-
-# pipewire
-sleep 0.5 && gentoo-pipewire-launcher & 
-
-# dark-light toggle
-$HOME/.local/bin/kdark &
-
-# status bar
-slstatus &
-
-# auto disk mounter
-udiskie &
-
-# auto Lock
-xautolock -detectsleep -time 5 -locker "$(which klock)" -corners 0-0+ -notify 10 -notifier "notify-send -u critical -t 10000 -- '   locking screen in 10 seconds'" &
-
-# autorepeat
-xset r rate 280 60 &
-
-# sxhkd
-sxhkd &
-
-# clipmenu
-clipmenud &
-
-# transmission (daemon & rss)
-# transmission-daemon --encryption-required --paused & # managed by openrc
-transmission-rss -f &
+export NNN_OPTS="e"
+# -e, open text files in $VISUAL (else $EDITOR, fallback vi) [preferably CLI]
