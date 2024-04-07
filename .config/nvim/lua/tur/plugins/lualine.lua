@@ -1,8 +1,7 @@
 return {
     'nvim-lualine/lualine.nvim', 
-	dependencies = { 'nvim-tree/nvim-web-devicons', lazy = true },
-    lazy = false,
-	config = function()
+    dependencies = { 'nvim-tree/nvim-web-devicons', lazy = true },
+    config = function()
       local configs = require("lualine").setup{
         options = { 
             theme = 'codedark', -- theme = 'pywal',

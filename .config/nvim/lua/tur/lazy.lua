@@ -11,10 +11,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-    {import = "kumao.plugins"},
-}, {
+require("lazy").setup(
+  {
+    { import = "tur.plugins" },
+  },
+  {
     install = { colorscheme = { "carbonfox" } },
     checker = { enabled = true, notify = false },
     change_detection = { notify = false }
-})
+  })
