@@ -17,6 +17,11 @@ git clone --separate-git-dir=$HOME/src/dots https://github.com/arthrx07/dots.git
 rsync --recursive --verbose --exclude '.git' dots-tmp/ $HOME/
 rm --recursive dots-tmp
 ```
+#### You can find my patched dwm, dmenu, st and slock at:
+* [dwm](https://github.com/arthurx07/dwm)
+* [dmenu](https://github.com/arthurx07/dmenu)
+* [st](https://github.com/arthurx07/st)
+* [slock](https://github.com/arthurx07/slock)
 
 ### configuration
 
