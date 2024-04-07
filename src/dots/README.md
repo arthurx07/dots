@@ -1,4 +1,7 @@
 ## my dotfiles
+<img src="https://github.com/arthurx07/dots/blob/main/src/dots/coding.png">
+<img src="https://github.com/arthurx07/dots/blob/main/src/dots/empty.png""
+<img src="https://github.com/arthurx07/dots/blob/main/src/dots/browsing.png">
 
 ### setup
 
