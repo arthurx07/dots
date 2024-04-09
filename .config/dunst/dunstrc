@@ -1,6 +1,6 @@
 [global]
     origin = top-right
-    offset = 30x30
+    offset = 57x57
 
     transparency = 10
     frame_color = "#5B6562"

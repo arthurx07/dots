@@ -14,6 +14,7 @@ alias p2++='g++ -D_GLIBCXX_DEBUG -O2 -Wall -Wextra -Werror -Wno-sign-compare -st
 alias cdp2='cd /home/tur/src/studies/gei/Q2/Programació\ 2/PRO2'
 alias :q=exit
 alias mn='f() { lowdown -tterm $1 | less -R };f' # pretty markdown in terminal
+alias ff='fastfetch --load-config paleofetch'
 
 ## Memory/Process management
 alias df='df -h'
